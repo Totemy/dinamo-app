@@ -1,0 +1,26 @@
+.assortment{
+  background-image: url("/img/assortiment/background.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  &__card{
+    display: flex;
+    flex-direction: column;
+  }
+  &__container{
+    position: relative;
+  }
+  &__tomato-img{
+    position: absolute;
+    top: 0;
+    left: -20px;
+  }
+  &__basil1-img{
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  &__basil2-img{
+    position: absolute;
+  }
+}

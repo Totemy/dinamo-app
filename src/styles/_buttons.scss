@@ -1,0 +1,11 @@
+.btn{
+  &__primary{
+    background-color: $second-color;
+    color: #FFFFFF;
+    padding: 21px 50px;
+    border: solid 1px $second-color;
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight: bold;
+  }
+}
