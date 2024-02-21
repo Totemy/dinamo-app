@@ -4,6 +4,7 @@ body{
   color: #FFFFFF;
   min-height: 100vh;
   background-color: #000000;
+  overflow-x: hidden;
 }
 .container{
   max-width: 1270px;
@@ -16,4 +17,16 @@ body{
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
+
+}
+.second__wrapper{
+  background-image: url("/img/assortiment/background.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+
+}
+.article{
+  text-align: center;
+  padding: 0px 315px;
 }

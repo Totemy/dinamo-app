@@ -1,26 +1,48 @@
 .assortment{
-  background-image: url("/img/assortiment/background.jpg");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
+  text-align: center;
+  margin-top: 50px;
+  padding-top: 72px;
+  padding-bottom: 137px;
   &__card{
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    justify-content: space-around;
+    gap: 62px;
+    z-index: 2;
+    position: relative;
+    &__item{
+
+    }
+    &__wrapper{
+      width: 287px;
+      height: 287px;
+      overflow: hidden;
+      border-radius: 100%;
+    }
+  }
+  &__img{
+    width: 287px;
+    height: 287px;
+    scale: 101%;
   }
   &__container{
     position: relative;
   }
   &__tomato-img{
     position: absolute;
-    top: 0;
-    left: -20px;
+    top: -258px;
+    left: -181px;
   }
   &__basil1-img{
     position: absolute;
-    right: 0;
-    top: 0;
+    right: -259px;
+    top: 90px;
+
   }
   &__basil2-img{
     position: absolute;
+    top: 63px;
+    left: -26px;
+    z-index: 1;
   }
 }
