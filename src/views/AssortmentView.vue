@@ -2,10 +2,10 @@
   <section class="assortment">
     <div class="container assortment__container">
         <div class="article">
-          <h2>
+          <h2 class="article__header">
             Попробуйте на вкус
           </h2>
-          <p>
+          <p class="article__text">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam pretium netus urna hendrerit convallis aliquam consequat turpis.
           </p>
         </div>
@@ -13,6 +13,9 @@
           <div class="assortment__card__item">
             <div class="assortment__card__wrapper">
               <img class="assortment__img" src="/img/assortiment/elips/1.jpg" alt="1.jpg">
+
+            </div>
+            <div class="assortment__card__text">
               <p>
                 Здесь будет какой то текст, возможно назване блюда
               </p>
@@ -22,6 +25,9 @@
         <div class="assortment__card__item">
           <div class="assortment__card__wrapper">
             <img class="assortment__img" src="/img/assortiment/elips/2.jpg" alt="1.jpg">
+
+          </div>
+          <div class="assortment__card__text">
             <p>
               Здесь будет какой то текст, возможно назване блюда
             </p>
@@ -31,6 +37,9 @@
         <div class="assortment__card__item">
           <div class="assortment__card__wrapper">
             <img class="assortment__img" src="/img/assortiment/elips/3.jpg" alt="1.jpg">
+
+          </div>
+          <div class="assortment__card__text">
             <p>
               Здесь будет какой то текст, возможно назване блюда
             </p>

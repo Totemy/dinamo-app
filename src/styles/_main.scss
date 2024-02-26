@@ -20,13 +20,16 @@ body{
 
 }
 .second__wrapper{
-  background-image: url("/public/img/white-talcume-powder-explosion-black 2.png");
-  background-repeat: no-repeat;
+  background-image: url("/public/img/background.png");
   background-position: center;
-  background-size: cover;
-
 }
 .article{
   text-align: center;
   padding: 0px 315px;
+  &__header{
+    margin-bottom: 25px;
+  }
+  &__text{
+    margin-bottom: 60px;
+  }
 }

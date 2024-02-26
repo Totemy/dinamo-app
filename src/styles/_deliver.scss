@@ -4,8 +4,20 @@
     flex-direction: row;
     justify-content: space-between;
   }
+  &__item{
+    display: flex;
+    align-items: center;
+    gap: 30px;
+  }
   &__cards{
-
+    &__item{
+      display: flex;
+      align-items: center;
+      margin-bottom: 50px;
+    }
+    &__text{
+      max-width:400px ;
+    }
   }
   &__main-img{
     width: 605px;
@@ -19,6 +31,27 @@
       height: 120px;
       border-radius: 100%;
       overflow: hidden;
+      margin-right: 30px;
     }
+  }
+  &__tomato{
+    position: absolute;
+    bottom: 32px;
+    left: -69px;
+  }
+  &__basil-left{
+    position: absolute;
+    top: -49px;
+    left: -245px;
+    scale: 71%;
+  }
+  &__basil-right{
+    position: absolute;
+    right: -380px;
+    bottom: -224px;
+  }
+  &__container{
+    position: relative;
+    padding-top: 160px;
   }
 }

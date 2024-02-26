@@ -11,7 +11,7 @@
     z-index: 2;
     position: relative;
     &__item{
-
+      width: 287px;
     }
     &__wrapper{
       width: 287px;
@@ -19,6 +19,12 @@
       overflow: hidden;
       border-radius: 100%;
     }
+    &__text{
+      margin-top: 40px;
+    }
+  }
+  &__button{
+    margin-top: 60px;
   }
   &__img{
     width: 287px;
