@@ -22,7 +22,7 @@
               <img class="deliver__img" src="/img/deliver/del2.png" alt="2.jpg">
             </div>
             <div class="deliver__cards__text">
-              Доставка при помощи сервиса по оставке еды и лальше по тексту
+              Доставка при помощи сервиса по доставке еды и дальше по тексту
             </div>
           </div>
           <div class="deliver__cards__item">
@@ -31,7 +31,7 @@
             </div>
 
             <div class="deliver__cards__text">
-              Доставка при помощи сервиса по оставке еды и лальше по тексту
+              Доставка при помощи сервиса по доставке еды и дальше по тексту
             </div>
           </div>
         </div>
