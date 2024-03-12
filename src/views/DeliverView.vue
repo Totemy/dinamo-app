@@ -27,7 +27,7 @@
           </div>
           <div class="deliver__cards__item">
             <div class="deliver__img__wrapper">
-              <img class="deliver__img" src="/img/deliver/del3.jpg" alt="3.jpg">
+              <img class="deliver__img" src="/img/deliver/del2.png" alt="3.jpg">
             </div>
 
             <div class="deliver__cards__text">
