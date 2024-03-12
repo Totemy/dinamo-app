@@ -8,4 +8,17 @@
     font-size: 14px;
     font-weight: bold;
   }
+  &__open-menu{
+    position: absolute;
+    padding: 20px 55px;
+    border: solid 1px #FFFFFF;
+    color: #FFFFFF;
+    font-weight: bold;
+    font-size: 14px;
+    border-radius: 5px;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+    left: 29px;
+    top: 217px;
+  }
 }

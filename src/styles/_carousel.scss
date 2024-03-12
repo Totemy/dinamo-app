@@ -1,13 +1,110 @@
 .wiper{
-  &__text{
+  position: relative;
+  margin: 0 auto;
+  li{
+    list-style: none;
+  }
 
+  &__text{
+    position: absolute;
+    bottom: 20px;
+    font-weight: 600;
+    font-size: 25px;
+    left: 0;
+    right: 0;
+    transform: translateY(50%);
+    text-align: center;
   }
   &__image{
+    height:100%;
+    width:100%;
+    object-fit: cover;
+    position: relative;
+    &:before{
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 1);
+    }
+    &-button{
+      right: 50%;
+      top: 50%;
+      position: absolute;
+      padding: 0.8rem 1rem;
+      border-radius: 3px;
+      background-color: white;
+      border: none;
+      font-size: 1.4rem;
+      transform: translateY(-50%) translateX(50%);
+      cursor: pointer;
+    }
+  }
+  &__track{
+    width: 300px;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    column-gap: 5px;
+    margin: 0 auto;
+    transition: transform 0.4s ease-in;
+    padding: 0 1rem;
+  }
+  &__item{
+    width: 288px;
+    height: 508px;
+    position: relative;
+    transition: scale 0.2s linear;
+  }
+  &__button{
 
+  }
+  &-button{
+    margin: 0 1rem;
+    height: 70px;
+    width: 45px;
+    position: absolute;
+    top: 50%;
+    background: transparent;
+    border: none;
+    transform: translateY(-50%);
+    z-index: 1;
+    &__left{
+      right: 0;
+      transform: translateY(-50%) rotate(180deg);
+    }
+  }
+  &-button img{
+    height: 100%;
+    width: 100%;
+    object-fit:cover;
   }
 }
 .swiper{
   &__image{
-
+    &-button{
+      right: 50%;
+      top: 50%;
+      position: absolute;
+      padding: 0.8rem 1rem;
+      border-radius: 3px;
+      background-color: white;
+      border: none;
+      font-size: 1rem;
+      transform: translateY(-50%) translateX(50%);
+      cursor: pointer;
+      &:hover{
+        color: red;
+      }
+    }
   }
+}
+.overlay{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
 }
