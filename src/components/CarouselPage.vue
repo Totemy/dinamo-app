@@ -10,7 +10,7 @@
             :class="{ 'active-swipe': index === currentIndex }">
             <img :src="slide.image" class="wiper__image" alt="slider-image">
             <p class="wiper__text"> {{slide.text}}</p>
-            <button v-if="index === currentIndex" class="btn btn__open-menu">Открыть меню</button>
+            <button v-if="index === currentIndex" class="btn btn__open-menu" @click="openModal()">Открыть меню</button>
           <div v-else class="overlay"></div>
         </li>
       </ul>
@@ -18,15 +18,21 @@
         <img src="/img/carousel/left-arrow.svg" alt="Next" />
       </button>
     </div>
+    <ModalWindow :show="showModal">
+      <p>hi</p>
+    </ModalWindow>
   </div>
 </template>
 
 <script>
+import ModalWindow from '@/components/ModalWindow.vue'
+
 export default {
+  components: { ModalWindow },
   data() {
     return {
       currentIndex: 0,
-      itemWidth: 0,
+      showModal: false,
       slides: [
         { image: '/img/carousel/1.jpg', text: 'Салаты'},
         { image: '/img/carousel/2.jpg', text: 'Выпечка'},
@@ -36,9 +42,6 @@ export default {
         { image: '/img/carousel/6.jpg', text: 'Соусы'},
       ]
     };
-  },
-  mounted() {
-    this.itemWidth = this.$refs.wiperItem.$el.getBoundingClientRect().width;
   },
   methods: {
     nextSlide() {
@@ -51,6 +54,12 @@ export default {
         this.currentIndex--;
       }
     },
+    openModal() {
+      this.showModal = true;
+    },
+    closeModal() {
+      this.showModal = false;
+    }
   }
 };
 </script>

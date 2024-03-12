@@ -7,6 +7,7 @@
     <AssortmentView/>
     <Menu/>
     <DeliverView/>
+    <GalleryView/>
   </div>
   <div>
     <FooterView/>
@@ -20,8 +21,10 @@ import AssortmentView from '@/views/AssortmentView.vue'
 import Menu from '@/views/MenuView.vue'
 import DeliverView from '@/views/DeliverView.vue'
 import FooterView from '@/views/FooterView.vue'
+import GalleryView from '@/views/GalleryView.vue'
 export default {
   components:{
+    GalleryView,
     FooterView,
     DeliverView,
     AssortmentView,

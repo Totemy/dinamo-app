@@ -1,0 +1,23 @@
+.gallery{
+  max-width: 1438px;
+  margin: 0 auto;
+  &__list{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 0px 2px;
+    justify-content: center;
+    align-items: center;
+
+  }
+  &__item{
+
+  }
+  &__img{
+    width: 358px;
+    height: 269px;
+  }
+  &__wrapper{
+    text-align: center;
+  }
+}
