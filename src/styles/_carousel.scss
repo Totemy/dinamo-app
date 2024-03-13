@@ -108,3 +108,21 @@
   height: 100%;
   background-color: rgba(0, 0, 0, 0.5);
 }
+.carousel__mobile{
+  display: none;
+  @media screen and (max-width: 768px) {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}
+.carousel__web{
+  display: block;
+  @media screen and (max-width: 768px) {
+    display: none;
+  }
+}
+.mobile-carousel{
+  position: relative;
+}

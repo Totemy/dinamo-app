@@ -18,6 +18,7 @@ body{
   background-position: center;
   background-size: cover;
 
+
 }
 .second__wrapper{
   background-image: url("/public/img/background.png");
@@ -26,6 +27,9 @@ body{
 .article{
   text-align: center;
   padding: 0px 315px;
+  @media screen and (max-width: 768px) {
+    padding: 0px;
+  }
   &__header{
     margin-bottom: 25px;
   }
