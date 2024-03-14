@@ -2,8 +2,8 @@
   <div>
     <div v-for="slide in slides" class="mobile-carousel">
       <img class="slide" :src="slide.image" alt="{{slide.text}}">
-      <p>{{slide.text}}</p>
       <button class="btn btn__open-menu" @click="openModal()">Открыть меню</button>
+      <p class="wiper__text"> {{slide.text}}</p>
     </div>
   </div>
 </template>
