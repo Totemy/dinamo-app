@@ -50,8 +50,9 @@
     right: -259px;
     top: 90px;
     @media screen and (max-width: 768px) {
-      right: -195px;
-      top: 739px;
+      //right: -195px;
+      //top: 739px;
+      display: none;
     }
   }
   &__basil2-img{
