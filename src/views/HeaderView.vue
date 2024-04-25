@@ -20,22 +20,38 @@
         </div>
       </div>
       <div class="navbar-mobile">
-        <div class="navbar-burger">
-          <span class="navbar-burger__bar"></span>
-          <span class="navbar-burger__bar"></span>
-          <span class="navbar-burger__bar"></span>
+        <div> <img src="/img/footer/logo.png"> </div>
+        <div class="navbar-mobile__social">
+          <div class="navbar-mobile__social_img"> <img src="/img/header/phone.svg" /> </div>
+          <div class="navbar-mobile__social_img"> <img src="/img/header/instagram.png" /> </div>
+          <div class="navbar-mobile__social_img"> <img src="/img/header/facebook.png" /> </div>
+          <div class="navbar-mobile__social_img"> <img src="/img/header/twitter.png" /> </div>
         </div>
         <div>
-          <div>Logo</div>
-          <div>главная</div>
-          <div>меню</div>
-          <div>доставка</div>
-          <div>контакты</div>
-          <div>акции</div>
+          <div class="navbar-burger" @click="openBar = !openBar">
+            <span class="navbar-burger__bar"></span>
+            <span class="navbar-burger__bar"></span>
+            <span class="navbar-burger__bar"></span>
+          </div>
+          <div class="navbar-mobile__list" v-if="openBar">
+            <div>главная</div>
+            <div>меню</div>
+            <div>доставка</div>
+            <div>контакты</div>
+            <div>акции</div>
+          </div>
         </div>
+
       </div>
     </div>
   </div>
 </template>
-<script setup>
+<script>
+export default {
+  data(){
+    return{
+      openBar: false
+    }
+  }
+}
 </script>
