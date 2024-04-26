@@ -43,6 +43,7 @@
       <img class="deliver__tomato" src="../../public/img/deliver/tomato.png" alt="tomato">
       <img class="deliver__basil-left" src="../../public/img/deliver/basil-left.png" alt="basil1">
       <img class="deliver__basil-right" src="../../public/img/deliver/basil-right.png" alt="basil2">
+      <img class="deliver__tomato-mobile" src="../../public/img/deliver/tomato_mobile.png" alt="tomato-mobile">
     </div>
   </section>
 </template>
