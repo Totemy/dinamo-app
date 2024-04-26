@@ -2,9 +2,20 @@
   &__content{
     padding: 130px 50px 176px 0px;
     width: 607px;
+    @include mobile{
+      padding: 0px;
+      width: 100%;
+    }
   }
   &__text{
     font-size: 16px;
     padding: 95px 0px 35px 0px;
+  }
+  &__article{
+    font-size: 55px;
+    font-weight: bold;
+  }
+  &__text{
+    font-size: 16px;
   }
 }
