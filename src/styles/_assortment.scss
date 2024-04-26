@@ -22,12 +22,7 @@
     &__text{
       margin-top: 40px;
     }
-    @media only screen and (max-width: 768px) {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-    }
+
   }
   &__button{
     margin-top: 60px;
@@ -49,11 +44,6 @@
     position: absolute;
     right: -259px;
     top: 90px;
-    @media only screen and (max-width: 768px) {
-      //right: -195px;
-      //top: 739px;
-      display: none;
-    }
   }
   &__basil2-img{
     position: absolute;

@@ -2,30 +2,9 @@
   &__content{
     padding: 130px 50px 176px 0px;
     width: 607px;
-    @media only screen and (max-width: 768px) {
-      width: auto;
-      text-align: center;
-      padding: 0px;
-    }
-  }
-  &__article{
-
   }
   &__text{
     font-size: 16px;
     padding: 95px 0px 35px 0px;
-    @media only screen and (max-width: 768px) {
-      padding: 0px;
-    }
-  }
-  &__button{
-
-  }
-  h1{
-    font-size: 55px;
-    font-weight: bold;
-  }
-  p{
-    font-size: 16px;
   }
 }
