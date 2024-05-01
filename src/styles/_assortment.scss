@@ -52,8 +52,7 @@
     right: -259px;
     top: 90px;
     @include mobile{
-      right: -184px;
-      top: 802px;
+      display: none;
     }
   }
   &__basil2-img{
@@ -61,5 +60,9 @@
     top: 63px;
     left: -26px;
     z-index: 1;
+    @include mobile{
+      top: 89px;
+      left: 169px;
+    }
   }
 }

@@ -2,12 +2,14 @@
   <div>
     <div v-for="slide in slides" class="mobile-carousel">
       <img class="slide" :src="slide.image" alt="{{slide.text}}">
-      <button class="btn btn__open-menu" @click="openModal()">Открыть меню</button>
+      <button class="btn btn__open-menu" @click="openMenu()">Открыть меню</button>
       <p class="wiper__text"> {{slide.text}}</p>
     </div>
   </div>
 </template>
 <script>
+import router from '@/router/index.js'
+
 export default {
   data() {
     return {
@@ -21,5 +23,10 @@ export default {
       ]
     };
   },
+  methods:{
+    openMenu(){
+      router.push('/menu');
+    }
+  }
 }
 </script>
