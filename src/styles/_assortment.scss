@@ -52,8 +52,7 @@
     right: -259px;
     top: 90px;
     @include mobile{
-      right: -184px;
-      top: 802px;
+      display: none;
     }
   }
   &__basil2-img{

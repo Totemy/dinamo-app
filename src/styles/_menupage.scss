@@ -1,0 +1,25 @@
+.menu-page{
+  background-color: #FFFFFF;
+  &__article{
+    font-weight: 900;
+    font-size: 28px;
+  }
+  &__blocks{
+    display: flex;
+    flex-direction: row;
+  }
+  &__block{
+
+  }
+  &__header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  &__info{
+
+  }
+  &__composition{
+
+  }
+}

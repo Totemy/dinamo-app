@@ -10,7 +10,7 @@
             :class="{ 'active-swipe': index === currentIndex }">
             <img :src="slide.image" class="wiper__image" alt="slider-image">
             <p class="wiper__text"> {{slide.text}}</p>
-            <button v-if="index === currentIndex" class="btn btn__open-menu" @click="openModal()">Открыть меню</button>
+            <button v-if="index === currentIndex" class="btn btn__open-menu" @click="openMenu()">Открыть меню</button>
           <div v-else class="overlay"></div>
         </li>
       </ul>
@@ -26,6 +26,7 @@
 
 <script>
 import ModalWindow from '@/components/ModalWindow.vue'
+import router from '@/router/index.js'
 
 export default {
   components: { ModalWindow },
@@ -54,11 +55,8 @@ export default {
         this.currentIndex--;
       }
     },
-    openModal() {
-      this.showModal = true;
-    },
-    closeModal() {
-      this.showModal = false;
+    openMenu(){
+      router.push('/menu');
     }
   }
 };

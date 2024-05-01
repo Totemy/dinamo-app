@@ -1,5 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import HeaderView from '@/views/MainView.vue'
+import MenuPageView from '@/views/MenuPageView.vue'
+import MainPage from '@/views/MainPage.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -7,7 +8,12 @@ const router = createRouter({
     {
       path: '/',
       name: 'home',
-      component: HeaderView
+      component: MainPage
+    },
+    {
+      path: '/menu',
+      name: 'menu',
+      component: MenuPageView
     }
   ]
 })

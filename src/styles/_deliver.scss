@@ -61,10 +61,14 @@
     left: -69px;
   }
   &__tomato-mobile{
-    position: absolute;
-    bottom: 148px;
-    z-index: 1;
-    left: 0px;
+    display: none;
+    @include mobile{
+      position: absolute;
+      bottom: 148px;
+      z-index: 1;
+      left: 0px;
+    }
+
   }
   &__basil-left{
     position: absolute;
