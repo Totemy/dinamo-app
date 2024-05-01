@@ -61,5 +61,9 @@
     top: 63px;
     left: -26px;
     z-index: 1;
+    @include mobile{
+      top: 89px;
+      left: 169px;
+    }
   }
 }
