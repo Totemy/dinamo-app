@@ -3,6 +3,8 @@
   margin: 0 auto;
   position: relative;
   z-index: 2;
+  // mobile version
+
   &__list{
     display: flex;
     flex-direction: row;
@@ -21,5 +23,14 @@
   }
   &__wrapper{
     text-align: center;
+    @include mobile{
+      display: none;
+    }
+  }
+  &__mobile{
+    display: none;
+    @include mobile{
+      display: block;
+    }
   }
 }

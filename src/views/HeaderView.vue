@@ -20,7 +20,7 @@
         </div>
       </div>
       <div class="navbar-mobile">
-        <div> <img src="/img/footer/logo.png"> </div>
+        <div> <img class="navbar-mobile__logo" src="/img/footer/logo.png"> </div>
         <div class="navbar-mobile__social">
           <div class="navbar-mobile__social_img"> <img src="/img/header/phone.svg" /> </div>
           <div class="navbar-mobile__social_img"> <img src="/img/header/instagram.png" /> </div>

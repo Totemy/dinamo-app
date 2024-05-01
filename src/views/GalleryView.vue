@@ -28,7 +28,16 @@
           </div>
         </div>
       </div>
+    <div class="gallery__mobile">
+      <SliderMobilePage/>
+    </div>
   </section>
 </template>
-<script setup>
+<script>
+import SliderMobilePage from '@/components/SliderMobilePage.vue'
+export default {
+  components: {
+    SliderMobilePage,
+  }
+}
 </script>
