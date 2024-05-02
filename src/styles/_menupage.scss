@@ -1,5 +1,7 @@
 .menu-page{
   background-color: #FFFFFF;
+  color: #000000;
+
   &__article{
     font-weight: 900;
     font-size: 28px;
@@ -7,9 +9,10 @@
   &__blocks{
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
   }
   &__block{
-
+    width: 50%;
   }
   &__header{
     display: flex;
