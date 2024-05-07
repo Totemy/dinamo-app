@@ -34,11 +34,11 @@
             <span class="navbar-burger__bar"></span>
           </div>
           <div class="navbar-mobile__list" v-if="openBar">
-            <div>главная</div>
-            <div>меню</div>
-            <div>доставка</div>
-            <div>контакты</div>
-            <div>акции</div>
+            <div class="navbar-mobile__item">главная</div>
+            <div class="navbar-mobile__item">меню</div>
+            <div class="navbar-mobile__item">доставка</div>
+            <div class="navbar-mobile__item">контакты</div>
+            <div class="navbar-mobile__item">акции</div>
           </div>
         </div>
 
