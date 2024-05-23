@@ -1,28 +1,20 @@
 .menu-page{
   background-color: #FFFFFF;
   color: #000000;
-
-  &__article{
-    font-weight: 900;
+  &__title{
     font-size: 28px;
+    font-weight: 900;
   }
   &__blocks{
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    gap: 15px;
   }
   &__block{
-    width: 50%;
-  }
-  &__header{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-  }
-  &__info{
-
-  }
-  &__composition{
-
+    width: calc(50% - 15px);
+    box-sizing: border-box;
+    padding: 15px;
+    border: 1px solid #FFFFFF;
   }
 }
