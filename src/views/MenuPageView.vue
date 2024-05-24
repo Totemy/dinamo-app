@@ -2,14 +2,19 @@
   <section class="menu-page">
     <div class="container">
       <div class="menu-page__gallery">
-        Gallery
+        <div class="menu-page__images" >
+          <img class="menu-page__img" src="/img/galery/gal1.jpg" alt="img-gallery-1"/>
+          <img class="menu-page__img" src="/img/galery/gal2.jpg" alt="img-gallery-2"/>
+          <img class="menu-page__img" src="/img/galery/gal3.jpg" alt="img-gallery-3"/>
+          <img class="menu-page__img" src="/img/galery/gal4.jpg" alt="img-gallery-4"/>
+        </div>
       </div>
       <div class="menu-page__title">
         <h2> Холодные закуски </h2>
       </div>
       <div class="menu-page__blocks">
         <div class="menu-page__block" v-for="item in 6" :key="item">
-          <div>
+          <div class="menu-page__block-header">
             <div class="menu-page__name">
               {{name}}
             </div>
@@ -17,22 +22,27 @@
               {{price}} грн
             </div>
           </div>
-          <div>
-            <div>
+          <div class="menu-page__block-under">
+            <div class="menu-page__size">
               {{size}}гр.
             </div>
             <div>
               {{code}}
             </div>
           </div>
-          <div>
+          <div class="menu-page__text">
             {{text}}
           </div>
         </div>
       </div>
 
       <div class="menu-page__gallery">
-        Gallery
+        <div class="menu-page__images" >
+          <img class="menu-page__img" src="/img/galery/gal1.jpg" alt="img-gallery-1"/>
+          <img class="menu-page__img" src="/img/galery/gal2.jpg" alt="img-gallery-2"/>
+          <img class="menu-page__img" src="/img/galery/gal3.jpg" alt="img-gallery-3"/>
+          <img class="menu-page__img" src="/img/galery/gal4.jpg" alt="img-gallery-4"/>
+        </div>
       </div>
     </div>
 
