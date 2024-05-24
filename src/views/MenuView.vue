@@ -1,5 +1,5 @@
 <template>
-  <section class="menu">
+  <section id="menu" class="menu">
     <div class="container">
       <div class="article">
         <h2 class="article__header">Меню</h2>

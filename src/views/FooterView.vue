@@ -1,5 +1,5 @@
 <template>
-  <section class="footer">
+  <section id="contact" class="footer">
     <div class="container">
       <div class="  footer__container">
         <div class="footer__item">

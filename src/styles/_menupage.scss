@@ -1,25 +1,79 @@
 .menu-page{
   background-color: #FFFFFF;
-  &__article{
-    font-weight: 900;
+  color: #000000;
+
+  &__title{
     font-size: 28px;
+    font-weight: 900;
+    text-align: center;
   }
   &__blocks{
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
+    gap: 15px;
+    width: 1180px;
+    margin: auto;
+    @include mobile{
+      flex-direction: column;
+      width: 100%;
+    }
   }
   &__block{
-
+    width: calc(50% - 15px);
+    box-sizing: border-box;
+    padding: 15px;
+    border: 1px solid #FFFFFF;
+    border-bottom: 1px solid #C4C4C4;
+    &:last-child{
+      border-bottom: none;
+    }
+    &:nth-child(5){
+      border-bottom: none;
+    }
+    &-header{
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      font-size: 18px;
+      font-weight: bold;
+    }
+    &-under{
+      font-size: 11px;
+      font-weight: 400 ;
+      display: flex;
+      flex-direction: row;
+      margin: 10px 0px 5px 0px;
+    }
+    @include mobile{
+      border: 0px;
+      width: 100%;
+    }
   }
-  &__header{
+  &__images{
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: center;
+    @include mobile{
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
   }
-  &__info{
-
+  &__img{
+    width: 272px;
+    margin: 15px;
+    overflow: hidden;
+    @include mobile{
+      width: 40%;
+    }
   }
-  &__composition{
-
+  &__text{
+    width: 90%;
+    @include mobile{
+      width: 100%;
+    }
+  }
+  &__size{
+    margin-right: 26px;
   }
 }
