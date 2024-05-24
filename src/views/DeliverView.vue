@@ -1,5 +1,5 @@
 <template>
-  <section class="deliver ">
+  <section id="delivery" class="deliver ">
     <div class="container deliver__container">
       <div class="article">
         <h2 class="article__header">Удобные способы доставки</h2>

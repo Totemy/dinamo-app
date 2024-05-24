@@ -1,5 +1,5 @@
 <template>
-  <section class="assortment">
+  <section id="discount" class="assortment">
     <div class="container assortment__container">
         <div class="article">
           <h2 class="article__header">

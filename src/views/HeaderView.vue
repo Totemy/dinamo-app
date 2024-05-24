@@ -4,11 +4,11 @@
       <div class="navbar-web">
         <div class="navbar-web__row">
           <div class="navbar-web__item"> <img src="/img/footer/logo.png"> </div>
-          <div class="navbar-web__item">главная</div>
-          <div class="navbar-web__item">меню</div>
-          <div class="navbar-web__item">доставка</div>
-          <div class="navbar-web__item">контакты</div>
-          <div class="navbar-web__item">акции</div>
+          <div class="navbar-web__item"><a href="#main">главная</a> </div>
+          <div class="navbar-web__item"><a href="#menu"> меню </a> </div>
+          <div class="navbar-web__item"><a href="#delivery">доставка</a> </div>
+          <div class="navbar-web__item"><a href="#contact">контакты</a> </div>
+          <div class="navbar-web__item"><a href="#discount">акции</a> </div>
           <div class="navbar-web__phone">
             +380 (98) 765 43 21
           </div>
@@ -34,11 +34,11 @@
             <span class="navbar-burger__bar"></span>
           </div>
           <div class="navbar-mobile__list" v-if="openBar">
-            <div class="navbar-mobile__item">главная</div>
-            <div class="navbar-mobile__item">меню</div>
-            <div class="navbar-mobile__item">доставка</div>
-            <div class="navbar-mobile__item">контакты</div>
-            <div class="navbar-mobile__item">акции</div>
+            <div class="navbar-mobile__item"><a href="#main">главная</a> </div>
+            <div class="navbar-mobile__item"><a href="#menu">меню</a> </div>
+            <div class="navbar-mobile__item"><a href="#delivery">доставка</a> </div>
+            <div class="navbar-mobile__item"><a href="#contact">контакты</a> </div>
+            <div class="navbar-mobile__item"><a href="#discount">акции</a> </div>
           </div>
         </div>
 
