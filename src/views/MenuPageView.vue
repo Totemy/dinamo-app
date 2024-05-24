@@ -1,14 +1,12 @@
 <template>
   <section class="menu-page">
     <div class="container">
-      <div class="menu-page__gallery">
         <div class="menu-page__images" >
           <img class="menu-page__img" src="/img/galery/gal1.jpg" alt="img-gallery-1"/>
           <img class="menu-page__img" src="/img/galery/gal2.jpg" alt="img-gallery-2"/>
           <img class="menu-page__img" src="/img/galery/gal3.jpg" alt="img-gallery-3"/>
           <img class="menu-page__img" src="/img/galery/gal4.jpg" alt="img-gallery-4"/>
         </div>
-      </div>
       <div class="menu-page__title">
         <h2> Холодные закуски </h2>
       </div>
@@ -35,8 +33,6 @@
           </div>
         </div>
       </div>
-
-      <div class="menu-page__gallery">
         <div class="menu-page__images" >
           <img class="menu-page__img" src="/img/galery/gal1.jpg" alt="img-gallery-1"/>
           <img class="menu-page__img" src="/img/galery/gal2.jpg" alt="img-gallery-2"/>
@@ -44,8 +40,6 @@
           <img class="menu-page__img" src="/img/galery/gal4.jpg" alt="img-gallery-4"/>
         </div>
       </div>
-    </div>
-
   </section>
 </template>
 <script>
