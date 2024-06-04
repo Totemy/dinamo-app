@@ -52,6 +52,9 @@
   &__item{
     font-size: 16px;
     font-weight: 500;
+    &:hover{
+      border-bottom: 4px solid #B82121;
+    }
   }
   &__phone{
     position: relative;

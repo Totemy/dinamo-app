@@ -8,6 +8,12 @@
     border-radius: 5px;
     font-size: 14px;
     font-weight: bold;
+    transition: all 0.2s ease-in-out;
+    &:hover{
+      background-color: darken($second-color,10%);
+      box-shadow: #fefefe 10px 10px 1px;
+      transition: box-shadow .2s;
+    }
   }
   &__open-menu{
     position: absolute;
@@ -21,5 +27,11 @@
     z-index: 1;
     left: 29px;
     top: 217px;
+    transition: box-shadow .2s;
+    &:hover{
+      background-color: darken($second-color,10%);
+      box-shadow: #fefefe 10px 10px 1px;
+      transition: box-shadow .2s;
+    }
   }
 }
