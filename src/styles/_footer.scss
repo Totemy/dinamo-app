@@ -30,23 +30,20 @@
   &__text{
 
   }
+  &__left{
+    display: flex;
+    flex-direction: row;
+    gap: 0px 30px;
+  }
   &__footer{
     display: flex;
     flex-direction: row;
     color: #E0E0E0;
+    justify-content: space-between;
     &__item{
       position: relative;
-      margin-right: 30px;
       font-size: 12px;
-      &:last-child{
-        position: absolute;
-        right: 316px;
-        margin: 0;
-        @include mobile{
-          position: relative;
-          right: 0;
-        }
-      }
+
       @include mobile{
         margin-right: 0;
       }
