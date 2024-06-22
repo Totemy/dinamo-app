@@ -26,8 +26,10 @@
         </div>
       </div>
       <div class="footer__footer">
-        <div class="footer__footer__item"><h5> Политика конфиденциальности</h5></div>
-        <div class="footer__footer__item"><h5> Пользовательское соглашение </h5></div>
+        <div class="footer__left">
+          <div class="footer__footer__item"><h5> Политика конфиденциальности</h5></div>
+          <div class="footer__footer__item"><h5> Пользовательское соглашение </h5></div>
+        </div>
         <div class="footer__footer__item"><h5> Динамо. Грузинское бистро. Все права защищены, 2021</h5></div>
       </div>
     </div>
