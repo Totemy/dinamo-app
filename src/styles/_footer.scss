@@ -1,19 +1,19 @@
-.footer{
-  &__container{
+.footer {
+  &__container {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     padding: 37px 0px;
     align-items: center;
-    @include mobile{
+    @include mobile {
       flex-direction: column;
     }
   }
-  &__item{
+  &__item {
     position: relative;
-    &:not(:last-child){
-      &:after{
-        content: "";
+    &:not(:last-child) {
+      &:after {
+        content: '';
         position: absolute;
         right: calc(-50% - 1px);
         top: 0;
@@ -21,34 +21,38 @@
         height: 70px;
         width: 1px;
         background-color: #393939;
-        @include mobile{
+        @include mobile {
           display: none;
         }
       }
     }
   }
-  &__text{
-
+  &__text {
   }
-  &__left{
+  &__logo {
+    object-fit: contain;
+    width: 133px;
+    height: 66px;
+  }
+  &__left {
     display: flex;
     flex-direction: row;
     gap: 0px 30px;
   }
-  &__footer{
+  &__footer {
     display: flex;
     flex-direction: row;
-    color: #E0E0E0;
+    color: #e0e0e0;
     justify-content: space-between;
-    &__item{
+    &__item {
       position: relative;
       font-size: 12px;
 
-      @include mobile{
+      @include mobile {
         margin-right: 0;
       }
     }
-    @include mobile{
+    @include mobile {
       flex-direction: column;
       align-items: center;
     }
