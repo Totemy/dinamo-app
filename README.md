@@ -12,19 +12,21 @@ A pixel-perfect responsive website for a Georgian restaurant, built from a Figma
 
 > Home page with hero section, custom carousel, menu, delivery info, contacts and promotions.
 
+![Dinamo Restaurant](preview.png)
+
 ---
 
 ## ⚡ Tech Stack
 
-| Category | Technology |
-|---|---|
-| Framework | Vue 3 (Composition-ready, Options API) |
-| Routing | Vue Router 4 |
-| Bundler | Vite 5 |
-| Styles | SCSS (BEM methodology) |
-| Lightbox | SimpleLightbox |
-| Linting | ESLint + Prettier |
-| Deployment | Netlify |
+| Category   | Technology                             |
+| ---------- | -------------------------------------- |
+| Framework  | Vue 3 (Composition-ready, Options API) |
+| Routing    | Vue Router 4                           |
+| Bundler    | Vite 5                                 |
+| Styles     | SCSS (BEM methodology)                 |
+| Lightbox   | SimpleLightbox                         |
+| Linting    | ESLint + Prettier                      |
+| Deployment | Netlify                                |
 
 ---
 
@@ -93,6 +95,7 @@ The UI was implemented based on a **Figma mockup**, achieving pixel-perfect accu
 ## 👨‍💻 Author
 
 Built as a portfolio project to demonstrate frontend skills:
+
 - Vue 3 component architecture
 - Pixel-perfect layout from design mockup
 - Custom UI interactions without heavy libraries
