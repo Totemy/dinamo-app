@@ -40,27 +40,6 @@ A pixel-perfect responsive website for a Georgian restaurant, built from a Figma
 
 ---
 
-## 🗂️ Project Structure
-
-```
-src/
-├── assets/
-│   └── styles/          # Global SCSS, variables, mixins
-├── components/
-│   ├── HeaderPage.vue
-│   ├── CarouselPage.vue        # Desktop infinite carousel
-│   ├── CarouselMobilePage.vue  # Mobile carousel
-│   └── ModalWindow.vue
-├── views/
-│   ├── HomeView.vue
-│   └── MenuView.vue
-├── router/
-│   └── index.js
-└── App.vue
-```
-
----
-
 ## 🚀 Getting Started
 
 ```bash
