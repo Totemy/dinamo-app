@@ -13,9 +13,9 @@
           </p>
         </div>
         <div class="main__button">
-          <button class="btn btn__primary" type="button" href="#menu">
-            <a href="#menu">GO TO MENU </a>
-          </button>
+          <a href="#menu">
+            <button class="btn btn__primary" type="button" href="#menu">GO TO MENU</button></a
+          >
         </div>
       </div>
       <div></div>
