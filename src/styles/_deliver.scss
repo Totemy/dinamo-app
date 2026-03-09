@@ -1,91 +1,89 @@
-.deliver{
-  &__content{
+.deliver {
+  &__content {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    @include mobile{
+    @include mobile {
       flex-direction: column;
-      padding-bottom: 60px ;
+      padding-bottom: 60px;
     }
-
   }
-  &__item{
+  &__item {
     display: flex;
     align-items: center;
     gap: 30px;
   }
-  &__cards{
-    &__item{
+  &__cards {
+    &__item {
       display: flex;
       align-items: center;
       margin-bottom: 50px;
-      @include mobile{
+      @include mobile {
         flex-direction: column;
         text-align: center;
         margin: 30px 10px;
       }
     }
-    &__text{
-      max-width:400px ;
+    &__text {
+      max-width: 400px;
       font-weight: 700;
       font-size: 18px;
-
     }
   }
-  &__main-img{
+  &__main-img {
     width: 605px;
-    @include mobile{
+    @include mobile {
       position: relative;
       width: 100%;
       z-index: 2;
     }
   }
-  &__img{
+  &__img {
     width: 120px;
     height: 120px;
     scale: 102%;
-    &__wrapper{
+    &__wrapper {
       width: 120px;
       height: 120px;
       border-radius: 100%;
       overflow: hidden;
       margin-right: 30px;
-      @include mobile{
+      @include mobile {
         margin-bottom: 30px;
+        margin-right: 0px;
       }
     }
   }
-  &__tomato{
+  &__tomato {
     position: absolute;
     bottom: 32px;
     left: -69px;
   }
-  &__tomato-mobile{
+  &__tomato-mobile {
     display: none;
-    @include mobile{
+    @include mobile {
       position: absolute;
       bottom: 148px;
       z-index: 1;
       left: 0px;
     }
-
   }
-  &__basil-left{
+  &__basil-left {
     position: absolute;
     top: -49px;
     left: -245px;
     scale: 71%;
   }
-  &__basil-right{
+  &__basil-right {
     position: absolute;
     right: -380px;
     bottom: -224px;
     z-index: 1;
-    @include mobile{
+    @include mobile {
       display: none;
     }
   }
-  &__container{
+  &__container {
     position: relative;
     padding-top: 160px;
   }

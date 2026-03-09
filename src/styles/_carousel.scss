@@ -1,143 +1,186 @@
-.wiper{
+.wiper-wrapper {
   position: relative;
+}
+
+.wiper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   margin: 0 auto;
-  li{
+
+  li {
     list-style: none;
   }
 
-  &__text{
-    position: absolute;
-    bottom: 20px;
-    font-weight: 600;
-    font-size: 25px;
-    left: 0;
-    right: 0;
-    transform: translateY(50%);
-    text-align: center;
-    z-index: 2;
-  }
-  &__image{
-    height:100%;
-    width:100%;
-    object-fit: cover;
-    position: relative;
-    &:before{
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-color: rgba(0, 0, 0, 1);
-    }
-    &-button{
-      right: 50%;
-      top: 50%;
-      position: absolute;
-      padding: 0.8rem 1rem;
-      border-radius: 3px;
-      background-color: white;
-      border: none;
-      font-size: 1.4rem;
-      transform: translateY(-50%) translateX(50%);
-      cursor: pointer;
-    }
-  }
-  &__track{
-    width: 300px;
-    display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    column-gap: 5px;
+  &__viewport {
+    overflow: hidden;
+    width: 100%;
+    max-width: 1200px;
     margin: 0 auto;
-    transition: transform 0.4s ease-in;
-    padding: 0 1rem;
+
+    @media screen and (max-width: 768px) {
+      width: 100%;
+    }
   }
-  &__item{
-    width: 288px;
+
+  &__track {
+    display: flex;
+    gap: 5px;
+    padding: 0;
+    margin: 0;
+    // зміщуємо старт треку так щоб центр активного = центр viewport
+    transform-origin: left center;
+  }
+
+  &__item {
+    flex: 0 0 293px;
+    width: 293px;
     height: 508px;
     position: relative;
-    transition: scale 0.2s linear;
-  }
-  &__button{
+    border-radius: 20px;
+    overflow: hidden;
+    transition:
+      transform 0.3s ease,
+      filter 0.3s ease;
+    filter: brightness(0.5);
 
-  }
-  &-button{
-    margin: 0 1rem;
-    height: 70px;
-    width: 45px;
-    position: absolute;
-    top: 50%;
-    background: transparent;
-    border: none;
-    transform: translateY(-50%);
-    z-index: 1;
-    &__left{
-      right: 0;
-      transform: translateY(-50%) rotate(180deg);
+    &.active-swipe {
+      transform: scale(1.05);
+      filter: brightness(1);
+      z-index: 1;
+    }
+
+    @media screen and (max-width: 768px) {
+      flex: 0 0 85vw;
+      width: 85vw;
+      height: 70vw;
     }
   }
-  &-button img{
+
+  &__image {
     height: 100%;
     width: 100%;
-    object-fit:cover;
+    object-fit: cover;
+    display: block;
   }
-}
-.swiper{
-  &__image{
-    &-button{
-      right: 50%;
-      top: 50%;
-      position: absolute;
-      padding: 0.8rem 1rem;
-      border-radius: 3px;
-      background-color: white;
-      border: none;
-      font-size: 1rem;
-      transform: translateY(-50%) translateX(50%);
-      cursor: pointer;
-      &:hover{
-        color: red;
-      }
+
+  &__text {
+    position: absolute;
+    bottom: 24px;
+    left: 0;
+    right: 0;
+    text-align: center;
+    font-weight: 600;
+    font-size: 22px;
+    color: #fff;
+    z-index: 2;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.7);
+  }
+
+  &-button {
+    flex-shrink: 0;
+    height: 70px;
+    width: 45px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    z-index: 2;
+    padding: 0;
+
+    img {
+      height: 100%;
+      width: 100%;
+      object-fit: contain;
+    }
+
+    &__right {
+      transform: rotate(180deg);
     }
   }
 }
-.overlay{
+
+.overlay {
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
+  inset: 0;
+  // overlay тепер через filter на item, але залишаємо для сумісності
+  pointer-events: none;
 }
 
-.carousel__mobile{
-  display: none;
-  @include mobile {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+.btn__open-menu {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 0.8rem 1.4rem;
+  border-radius: 4px;
+  background-color: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(4px);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  color: #fff;
+  font-size: 1rem;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background 0.2s;
+  z-index: 3;
+
+  &:hover {
+    background-color: rgba(255, 255, 255, 0.3);
   }
-
 }
-.carousel__web{
+
+.carousel__web {
   display: block;
-  @include mobile{
+  @media screen and (max-width: 768px) {
     display: none;
   }
 }
-.mobile-carousel{
-  position: relative;
-  @include mobile{
-    &:before{
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-color: rgba(0, 0, 0, 0.5);
-      z-index: 1;
-    }
+.mobile-carousel {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 0 16px;
+
+  &__item {
+    position: relative;
+    width: 100%;
+    height: 220px;
+    border-radius: 20px;
+    overflow: hidden;
+  }
+
+  &__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  &__overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.4);
+  }
+
+  &__text {
+    position: absolute;
+    bottom: 16px;
+    left: 0;
+    right: 0;
+    text-align: center;
+    color: #fff;
+    font-weight: 600;
+    font-size: 20px;
+    z-index: 2;
+    text-shadow: 0 2px 6px rgba(0, 0, 0, 0.6);
+  }
+
+  .btn__open-menu {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 3;
+    white-space: nowrap;
   }
 }

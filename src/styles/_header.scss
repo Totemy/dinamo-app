@@ -1,101 +1,177 @@
-.navbar-mobile{
-  display: none;
-  @include mobile{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    z-index: 2;
-    position: relative;
-    padding: 10px;
-  }
-  &__social{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    padding: 20px 10px 0px 30px;
-    &_img{
-      padding: 5px;
-    }
-  }
-  &__list{
-    display: none;
-    @include mobile{
-      display: flex;
-      flex-direction: column;
-      position: absolute;
-      left: 3px;
-    }
-  }
-  &__item{
-    padding: 5px;
-    border: solid 1px #ccc;
-    width: 100%;
-  }
-  &__logo{
-    height: 56px;
-    width: 111px;
-  }
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background-color: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(8px);
 }
-.navbar-web{
-  //mobile
-  @include mobile{
+
+// ─── Desktop ───────────────────────────────────────────
+.navbar-web {
+  @include mobile {
     display: none;
   }
-  //web
-  &__row{
+
+  &__row {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    padding: 2px 0px;
+    padding: 2px 0;
   }
-  &__item{
+
+  &__item {
     font-size: 16px;
     font-weight: 500;
-    &:hover{
-      border-bottom: 4px solid #B82121;
+    &:hover {
+      border-bottom: 4px solid #b82121;
     }
   }
-  &__phone{
+
+  &__phone {
     position: relative;
     font-weight: bold;
     font-size: 21px;
-    &::before{
+    &::before {
       position: absolute;
       content: '';
-      background-image: url("/public/img/header/phone.svg");
+      background-image: url('/public/img/header/phone.svg');
       width: 20px;
       height: 20px;
       left: -25px;
     }
   }
-  &__social{
+
+  &__social {
     display: flex;
     flex-direction: row;
-    &_img{
+    &_img {
       padding: 5px;
-      @include mobile{
+    }
+  }
+}
+
+// ─── Mobile navbar row ─────────────────────────────────
+.navbar-mobile {
+  display: none;
+
+  @include mobile {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+  }
+
+  &__logo {
+    height: 56px;
+    width: 111px;
+  }
+
+  &__social {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+
+    &_img {
+      padding: 5px;
+      img {
+        display: block;
         width: 20px;
         height: 20px;
-        padding: 15px;
+      }
+    }
+  }
+
+  // ─── Dropdown menu ───────────────────────────────────
+  &__list {
+    position: fixed;
+    top: 76px;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.95);
+    backdrop-filter: blur(8px);
+    z-index: 999;
+    padding: 12px 24px;
+  }
+
+  &__item {
+    padding: 14px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+
+    &:last-child {
+      border-bottom: none;
+    }
+
+    a {
+      font-size: 18px;
+      font-weight: 500;
+      color: white;
+      text-decoration: none;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      transition: color 0.2s;
+
+      &:hover {
+        color: #b82121;
       }
     }
   }
 }
-.navbar-burger{
+
+// ─── Burger ────────────────────────────────────────────
+.navbar-burger {
   display: none;
   flex-direction: column;
+  justify-content: center;
   cursor: pointer;
-  @include mobile{
-    display: flex;
-    padding: 16px;
-  }
-  &__bar{
-    width: 30px;
-    height: 3px;
-    background-color: white;
-    margin: 4px 0;
+  padding: 10px;
+  gap: 5px;
+  z-index: 1001;
 
-    border-radius: 5px;
+  @include mobile {
+    display: flex;
   }
+
+  &__bar {
+    width: 28px;
+    height: 2px;
+    background-color: white;
+    border-radius: 5px;
+    transition:
+      transform 0.35s ease,
+      opacity 0.35s ease,
+      width 0.35s ease;
+    transform-origin: center;
+  }
+
+  &--open {
+    .navbar-burger__bar:nth-child(1) {
+      transform: translateY(7px) rotate(45deg);
+    }
+    .navbar-burger__bar:nth-child(2) {
+      opacity: 0;
+      width: 0;
+    }
+    .navbar-burger__bar:nth-child(3) {
+      transform: translateY(-7px) rotate(-45deg);
+    }
+  }
+}
+
+// ─── Menu transition ───────────────────────────────────
+.menu-slide-enter-active,
+.menu-slide-leave-active {
+  transition:
+    max-height 0.35s ease,
+    opacity 0.35s ease;
+  max-height: 400px;
+  overflow: hidden;
+}
+
+.menu-slide-enter,
+.menu-slide-leave-to {
+  max-height: 0;
+  opacity: 0;
 }
