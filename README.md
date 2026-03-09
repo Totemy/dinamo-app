@@ -4,6 +4,7 @@ A pixel-perfect responsive website for a Georgian restaurant, built from a Figma
 
 **Live Demo:** [dinamo-restaurant-app.netlify.app](https://dinamo-restaurant-app.netlify.app/)
 
+**Figma design:** [Link](https://www.figma.com/design/Pc99siFs6W7sUCkVIGIveM/Dinamo-restaurant?node-id=13-8&t=TSSaPjUTM0KdAtq1-0)
 ---
 
 ## 📸 Preview
