@@ -4,7 +4,9 @@
       <!-- Desktop -->
       <div class="navbar-web">
         <div class="navbar-web__row">
-          <div class="navbar-web__item"><img src="/img/footer/logo2.png" /></div>
+          <div class="navbar-web__item">
+            <img src="/img/footer/logo2.png" alt="Dinamo Georgian Bistro" />
+          </div>
           <div class="navbar-web__item"><a href="#main">home</a></div>
           <div class="navbar-web__item"><a href="#menu">menu</a></div>
           <div class="navbar-web__item"><a href="#delivery">delivery</a></div>
@@ -12,22 +14,44 @@
           <div class="navbar-web__item"><a href="#discount">stock</a></div>
           <div class="navbar-web__phone">+380 (98) 765 43 21</div>
           <div class="navbar-web__social">
-            <div><img class="navbar-web__social_img" src="/img/header/instagram.svg" /></div>
-            <div><img class="navbar-web__social_img" src="/img/header/facebook.svg" /></div>
-            <div><img class="navbar-web__social_img" src="/img/header/twitter.svg" /></div>
+            <div>
+              <img
+                class="navbar-web__social_img"
+                src="/img/header/instagram.svg"
+                alt="social-logo"
+              />
+            </div>
+            <div>
+              <img
+                class="navbar-web__social_img"
+                src="/img/header/facebook.svg"
+                alt="social-logo"
+              />
+            </div>
+            <div>
+              <img class="navbar-web__social_img" src="/img/header/twitter.svg" alt="social-logo" />
+            </div>
           </div>
         </div>
       </div>
 
       <!-- Mobile -->
       <div class="navbar-mobile">
-        <img class="navbar-mobile__logo" src="/img/footer/logo2.png" />
+        <img class="navbar-mobile__logo" src="/img/footer/logo2.png" alt="logo icon" />
 
         <div class="navbar-mobile__social">
-          <div class="navbar-mobile__social_img"><img src="/img/header/phone.svg" /></div>
-          <div class="navbar-mobile__social_img"><img src="/img/header/instagram.svg" /></div>
-          <div class="navbar-mobile__social_img"><img src="/img/header/facebook.svg" /></div>
-          <div class="navbar-mobile__social_img"><img src="/img/header/twitter.svg" /></div>
+          <div class="navbar-mobile__social_img">
+            <img src="/img/header/phone.svg" alt="phone icon" />
+          </div>
+          <div class="navbar-mobile__social_img">
+            <img src="/img/header/instagram.svg" alt="Instagram" />
+          </div>
+          <div class="navbar-mobile__social_img">
+            <img src="/img/header/facebook.svg" alt="Facebook" />
+          </div>
+          <div class="navbar-mobile__social_img">
+            <img src="/img/header/twitter.svg" alt="Twitter" />
+          </div>
         </div>
 
         <div
@@ -42,7 +66,6 @@
       </div>
     </div>
 
-    <!-- Меню винесено за container, на рівень header -->
     <transition name="menu-slide">
       <div class="navbar-mobile__list" v-if="openBar">
         <div class="navbar-mobile__item"><a href="#main" @click="openBar = false">home</a></div>

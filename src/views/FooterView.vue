@@ -27,12 +27,10 @@
       </div>
       <div class="footer__footer">
         <div class="footer__left">
-          <div class="footer__footer__item"><h5>Privacy Policy</h5></div>
-          <div class="footer__footer__item"><h5>User Agreement</h5></div>
+          <div class="footer__footer__item">Privacy Policy</div>
+          <div class="footer__footer__item">User Agreement</div>
         </div>
-        <div class="footer__footer__item">
-          <h5>Dynamo. Georgian Bistro. All rights reserved, 2025</h5>
-        </div>
+        <div class="footer__footer__item">Dynamo. Georgian Bistro. All rights reserved, 2025</div>
       </div>
     </div>
   </section>

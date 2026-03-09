@@ -39,16 +39,22 @@
       </div>
       <img
         class="assortment__tomato-img"
+        width="287"
+        height="287"
         src="../../public/img/assortiment/tomato.png"
         alt="tomato"
       />
       <img
         class="assortment__basil1-img"
+        width="287"
+        height="287"
         src="../../public/img/assortiment/basil.png"
         alt="basil1"
       />
       <img
         class="assortment__basil2-img"
+        width="287"
+        height="287"
         src="../../public/img/assortiment/basil2.png"
         alt="basil2"
       />

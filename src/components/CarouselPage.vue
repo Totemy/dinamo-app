@@ -13,7 +13,7 @@
             class="wiper__item"
             :class="{ 'active-swipe': index === currentIndex + 1 }"
           >
-            <img :src="slide.image" class="wiper__image" :alt="slide.text" />
+            <img :src="slide.image" class="wiper__image" alt="slide image" />
             <p class="wiper__text">{{ slide.text }}</p>
             <div v-if="index !== currentIndex + 1" class="overlay"></div>
             <button

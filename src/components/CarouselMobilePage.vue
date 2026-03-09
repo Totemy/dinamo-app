@@ -1,7 +1,7 @@
 <template>
   <div class="mobile-carousel">
     <div v-for="(slide, index) in slides" :key="index" class="mobile-carousel__item">
-      <img class="mobile-carousel__image" :src="slide.image" :alt="slide.text" />
+      <img class="mobile-carousel__image" :src="slide.image" alt="slide image" />
       <div class="mobile-carousel__overlay"></div>
       <p class="mobile-carousel__text">{{ slide.text }}</p>
       <button class="btn btn__open-menu" @click="openMenu()">Open menu</button>
