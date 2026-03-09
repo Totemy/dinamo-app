@@ -24,7 +24,6 @@ A pixel-perfect responsive website for a Georgian restaurant, built from a Figma
 | Routing    | Vue Router 4                           |
 | Bundler    | Vite 5                                 |
 | Styles     | SCSS (BEM methodology)                 |
-| Lightbox   | SimpleLightbox                         |
 | Linting    | ESLint + Prettier                      |
 | Deployment | Netlify                                |
 
@@ -37,7 +36,6 @@ A pixel-perfect responsive website for a Georgian restaurant, built from a Figma
 - **Fully responsive** — mobile-first approach, adaptive layout for all screen sizes
 - **Animated burger menu** — transforms into × on open, with smooth slide-down transition
 - **Fixed header** with blur backdrop effect
-- **SimpleLightbox** integration for image gallery
 - **BEM** naming convention throughout all SCSS
 - **Clean component architecture** — separate components for header, carousel, mobile carousel, modal, etc.
 
@@ -77,8 +75,7 @@ The UI was implemented based on a **Figma mockup**, achieving pixel-perfect accu
   "dependencies": {
     "vue": "^3.4.15",
     "vue-router": "^4.2.5",
-    "sass": "^1.71.0",
-    "simplelightbox": "^2.14.2"
+    "sass": "^1.71.0"
   },
   "devDependencies": {
     "vite": "^5.0.11",
