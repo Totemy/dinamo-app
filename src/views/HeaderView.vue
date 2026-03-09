@@ -5,11 +5,11 @@
       <div class="navbar-web">
         <div class="navbar-web__row">
           <div class="navbar-web__item"><img src="/img/footer/logo.png" /></div>
-          <div class="navbar-web__item"><a href="#main">главная</a></div>
-          <div class="navbar-web__item"><a href="#menu">меню</a></div>
-          <div class="navbar-web__item"><a href="#delivery">доставка</a></div>
-          <div class="navbar-web__item"><a href="#contact">контакты</a></div>
-          <div class="navbar-web__item"><a href="#discount">акции</a></div>
+          <div class="navbar-web__item"><a href="#main">home</a></div>
+          <div class="navbar-web__item"><a href="#menu">menu</a></div>
+          <div class="navbar-web__item"><a href="#delivery">delivery</a></div>
+          <div class="navbar-web__item"><a href="#contact">contacts</a></div>
+          <div class="navbar-web__item"><a href="#discount">stock</a></div>
           <div class="navbar-web__phone">+380 (98) 765 43 21</div>
           <div class="navbar-web__social">
             <div><img class="navbar-web__social_img" src="/img/header/instagram.png" /></div>
@@ -45,16 +45,16 @@
     <!-- Меню винесено за container, на рівень header -->
     <transition name="menu-slide">
       <div class="navbar-mobile__list" v-if="openBar">
-        <div class="navbar-mobile__item"><a href="#main" @click="openBar = false">главная</a></div>
-        <div class="navbar-mobile__item"><a href="#menu" @click="openBar = false">меню</a></div>
+        <div class="navbar-mobile__item"><a href="#main" @click="openBar = false">home</a></div>
+        <div class="navbar-mobile__item"><a href="#menu" @click="openBar = false">menu</a></div>
         <div class="navbar-mobile__item">
-          <a href="#delivery" @click="openBar = false">доставка</a>
+          <a href="#delivery" @click="openBar = false">delivery</a>
         </div>
         <div class="navbar-mobile__item">
-          <a href="#contact" @click="openBar = false">контакты</a>
+          <a href="#contact" @click="openBar = false">contacts</a>
         </div>
         <div class="navbar-mobile__item">
-          <a href="#discount" @click="openBar = false">акции</a>
+          <a href="#discount" @click="openBar = false">stock</a>
         </div>
       </div>
     </transition>

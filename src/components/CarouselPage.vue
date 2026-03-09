@@ -21,7 +21,7 @@
               class="btn btn__open-menu"
               @click="openMenu()"
             >
-              Открыть меню
+              Open menu
             </button>
           </li>
         </ul>
@@ -65,7 +65,7 @@ export default {
     trackStyle() {
       const offset = (this.currentIndex + 1) * this.step
       return {
-        transform: `translateX(calc(-${offset}px + 40%))`,
+        transform: `translateX(calc(-${offset}px + 38%))`,
         transition: this.isTransitioning ? 'none' : 'transform 0.4s ease-in-out'
       }
     }

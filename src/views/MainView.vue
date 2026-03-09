@@ -3,24 +3,23 @@
     <div class="container">
       <div class="main__content">
         <div class="main__article">
-          <h1>Попробуй лучшую <span style="color: #B82121">грузинскую</span> кухню.</h1>
+          <h1>Try the best <span style="color: #b82121">Georgian</span> kitchen.</h1>
         </div>
         <div class="main__text">
           <p>
-            В нашем ресторане Вы найдете лучшие блюда приготвленные по старинным рецептам грузинской кухни. Потрясающий вкус блюд перенесет Вас к атмосферу невероятного Тбилисси не выходя из дома.
+            In our restaurant, you'll find the finest dishes prepared using traditional Georgian
+            recipes. The incredible flavors will transport you to the atmosphere of incredible
+            Tbilisi without leaving your home.
           </p>
         </div>
         <div class="main__button">
-          <button class="btn btn__primary" type="button">ПЕРЕЙТИ К МЕНЮ</button>
+          <button class="btn btn__primary" type="button" href="#menu">
+            <a href="#menu">GO TO MENU </a>
+          </button>
         </div>
       </div>
-      <div>
-
-      </div>
+      <div></div>
     </div>
-
   </section>
 </template>
-<script setup>
-
-</script>
+<script setup></script>

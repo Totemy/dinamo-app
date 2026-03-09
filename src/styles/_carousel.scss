@@ -136,11 +136,14 @@
   }
 }
 .mobile-carousel {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-  padding: 0 16px;
+  display: none;
 
+  @include mobile {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding: 0 16px;
+  }
   &__item {
     position: relative;
     width: 100%;

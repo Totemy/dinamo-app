@@ -2,16 +2,17 @@
   <section id="menu" class="menu">
     <div class="container">
       <div class="article">
-        <h2 class="article__header">Меню</h2>
+        <h2 class="article__header">Menu</h2>
         <p class="article__text">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam pretium netus urna hendrerit convallis aliquam consequat turpis.
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam pretium netus urna
+          hendrerit convallis aliquam consequat turpis.
         </p>
       </div>
       <div class="carousel__web">
-        <CarouselPage/>
+        <CarouselPage />
       </div>
       <div class="carousel__mobile">
-        <CarouselMobilePage/>
+        <CarouselMobilePage />
       </div>
     </div>
   </section>
