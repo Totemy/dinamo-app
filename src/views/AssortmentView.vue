@@ -11,7 +11,7 @@
       <div class="assortment__card">
         <div class="assortment__card__item">
           <div class="assortment__card__wrapper">
-            <img class="assortment__img" src="/img/assortiment/elips/1.jpg" alt="1.jpg" />
+            <img class="assortment__img" src="/img/assortiment/elips/1.webp" alt="1.webp" />
           </div>
           <div class="assortment__card__text">
             <p>There will be some text here, perhaps the name of a dish.</p>
@@ -19,7 +19,7 @@
         </div>
         <div class="assortment__card__item">
           <div class="assortment__card__wrapper">
-            <img class="assortment__img" src="/img/assortiment/elips/2.jpg" alt="1.jpg" />
+            <img class="assortment__img" src="/img/assortiment/elips/2.webp" alt="1.webp" />
           </div>
           <div class="assortment__card__text">
             <p>There will be some text here, perhaps the name of a dish.</p>
@@ -27,7 +27,7 @@
         </div>
         <div class="assortment__card__item">
           <div class="assortment__card__wrapper">
-            <img class="assortment__img" src="/img/assortiment/elips/3.jpg" alt="1.jpg" />
+            <img class="assortment__img" src="/img/assortiment/elips/3.webp" alt="1.webp" />
           </div>
           <div class="assortment__card__text">
             <p>There will be some text here, perhaps the name of a dish.</p>

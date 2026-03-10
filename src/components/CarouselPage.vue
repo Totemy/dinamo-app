@@ -45,17 +45,17 @@ export default {
       itemWidth: 293,
       gap: 5,
       slides: [
-        { image: '/img/carousel/1.jpg', text: 'Салаты' },
-        { image: '/img/carousel/2.jpg', text: 'Выпечка' },
-        { image: '/img/carousel/3.jpg', text: 'Супы' },
-        { image: '/img/carousel/4.jpg', text: 'Блюда на мангале' },
-        { image: '/img/carousel/5.jpg', text: 'Горячие блюда' },
-        { image: '/img/carousel/6.jpg', text: 'Соусы' }
+        { image: '/img/carousel/1.webp', text: 'Salads' },
+        { image: '/img/carousel/2.webp', text: 'Baking' },
+        { image: '/img/carousel/3.webp', text: 'Soups' },
+        { image: '/img/carousel/4.webp', text: 'Grilled dishes' },
+        { image: '/img/carousel/5.webp', text: 'Hot dishes' },
+        { image: '/img/carousel/6.webp', text: 'Sauces' }
       ]
     }
   },
   computed: {
-    // Клонуємо перший і останній слайд для плавного зациклення
+    // clone first and last image for circle carousel
     extendedSlides() {
       return [this.slides[this.slides.length - 1], ...this.slides, this.slides[0]]
     },

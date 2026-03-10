@@ -2,10 +2,10 @@
   <section class="menu-page">
     <div class="container">
       <div class="menu-page__images">
-        <img class="menu-page__img" src="/img/galery/gal1.jpg" alt="img-gallery-1" />
-        <img class="menu-page__img" src="/img/galery/gal2.jpg" alt="img-gallery-2" />
-        <img class="menu-page__img" src="/img/galery/gal3.jpg" alt="img-gallery-3" />
-        <img class="menu-page__img" src="/img/galery/gal4.jpg" alt="img-gallery-4" />
+        <img class="menu-page__img" src="/img/gallery/gal1.webp" alt="img-gallery-1" />
+        <img class="menu-page__img" src="/img/gallery/gal2.webp" alt="img-gallery-2" />
+        <img class="menu-page__img" src="/img/gallery/gal3.webp" alt="img-gallery-3" />
+        <img class="menu-page__img" src="/img/gallery/gal4.webp" alt="img-gallery-4" />
       </div>
       <div class="menu-page__title">
         <h2>Cold appetizers</h2>
@@ -30,10 +30,10 @@
         </div>
       </div>
       <div class="menu-page__images">
-        <img class="menu-page__img" src="/img/galery/gal1.jpg" alt="img-gallery-1" />
-        <img class="menu-page__img" src="/img/galery/gal2.jpg" alt="img-gallery-2" />
-        <img class="menu-page__img" src="/img/galery/gal3.jpg" alt="img-gallery-3" />
-        <img class="menu-page__img" src="/img/galery/gal4.jpg" alt="img-gallery-4" />
+        <img class="menu-page__img" src="/img/gallery/gal1.webp" alt="img-gallery-1" />
+        <img class="menu-page__img" src="/img/gallery/gal2.webp" alt="img-gallery-2" />
+        <img class="menu-page__img" src="/img/gallery/gal3.webp" alt="img-gallery-3" />
+        <img class="menu-page__img" src="/img/gallery/gal4.webp" alt="img-gallery-4" />
       </div>
     </div>
   </section>

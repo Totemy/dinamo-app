@@ -4,7 +4,7 @@
       <img
         v-for="(image, index) in images"
         :key="index"
-        :src="`/img/galery/${image.url}.jpg`"
+        :src="`/img/gallery/${image.url}.webp`"
         :class="{ active: index === currentIndex }"
         :alt="`carousel slide ${index}`"
       />

@@ -33,7 +33,7 @@
           </div>
         </div>
         <div>
-          <img class="deliver__main-img" src="/img/deliver/image.jpg" alt="image.jpg" />
+          <img class="deliver__main-img" src="/img/deliver/image.webp" alt="image.webp" />
         </div>
       </div>
       <img class="deliver__tomato" src="../../public/img/deliver/tomato.png" alt="tomato" />

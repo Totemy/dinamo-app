@@ -16,12 +16,12 @@ export default {
   data() {
     return {
       slides: [
-        { image: '/img/carousel/1.jpg', text: 'Salads' },
-        { image: '/img/carousel/2.jpg', text: 'Baking' },
-        { image: '/img/carousel/3.jpg', text: 'Soups' },
-        { image: '/img/carousel/4.jpg', text: 'Grilled dishes' },
-        { image: '/img/carousel/5.jpg', text: 'Hot dishes' },
-        { image: '/img/carousel/6.jpg', text: 'Sauces' }
+        { image: '/img/carousel/1.webp', text: 'Salads' },
+        { image: '/img/carousel/2.webp', text: 'Baking' },
+        { image: '/img/carousel/3.webp', text: 'Soups' },
+        { image: '/img/carousel/4.webp', text: 'Grilled dishes' },
+        { image: '/img/carousel/5.webp', text: 'Hot dishes' },
+        { image: '/img/carousel/6.webp', text: 'Sauces' }
       ]
     }
   },

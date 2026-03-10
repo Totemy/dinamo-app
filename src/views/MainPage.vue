@@ -1,16 +1,26 @@
 <template>
   <div class="wrapper">
-    <HeaderView/>
-    <MainView/>
+    <HeaderView />
+    <MainView />
+    <img
+      src="/img/header/background.webp"
+      alt=""
+      role="presentation"
+      class="wrapper__bg"
+      fetchpriority="high"
+      loading="eager"
+      width="1440"
+      height="900"
+    />
   </div>
   <div class="second__wrapper">
-    <AssortmentView/>
-    <Menu/>
-    <DeliverView/>
-    <GalleryView/>
+    <AssortmentView />
+    <Menu />
+    <DeliverView />
+    <GalleryView />
   </div>
   <div>
-    <FooterView/>
+    <FooterView />
   </div>
 </template>
 <script>
@@ -22,7 +32,7 @@ import DeliverView from '@/views/DeliverView.vue'
 import FooterView from '@/views/FooterView.vue'
 import GalleryView from '@/views/GalleryView.vue'
 export default {
-  components:{
+  components: {
     GalleryView,
     FooterView,
     DeliverView,
