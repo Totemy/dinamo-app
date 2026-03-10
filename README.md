@@ -8,6 +8,13 @@ A pixel-perfect responsive website for a Georgian restaurant, built from a Figma
 
 ---
 
+![Performance](https://img.shields.io/badge/Performance-99-brightgreen)
+![Accessibility](https://img.shields.io/badge/Accessibility-100-brightgreen)
+![Best Practices](https://img.shields.io/badge/Best%20Practices-96-brightgreen)
+![SEO](https://img.shields.io/badge/SEO-100-brightgreen)
+
+---
+
 ## 📸 Preview
 
 > Home page with hero section, custom carousel, menu, delivery info, contacts and promotions.
