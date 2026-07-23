@@ -13,33 +13,35 @@
       height="900"
     />
   </div>
+
   <div class="second__wrapper">
     <AssortmentView />
-    <Menu />
+    <MenuView />
     <DeliverView />
     <GalleryView />
   </div>
-  <div>
-    <FooterView />
-  </div>
+
+  <FooterView />
 </template>
+
 <script>
 import HeaderView from '@/views/HeaderView.vue'
 import MainView from '@/views/MainView.vue'
 import AssortmentView from '@/views/AssortmentView.vue'
-import Menu from '@/views/MenuView.vue'
+import MenuView from '@/views/MenuView.vue'
 import DeliverView from '@/views/DeliverView.vue'
-import FooterView from '@/views/FooterView.vue'
 import GalleryView from '@/views/GalleryView.vue'
+import FooterView from '@/views/FooterView.vue'
+
 export default {
   components: {
-    GalleryView,
-    FooterView,
-    DeliverView,
-    AssortmentView,
-    MainView,
     HeaderView,
-    Menu
+    MainView,
+    AssortmentView,
+    MenuView,
+    DeliverView,
+    GalleryView,
+    FooterView
   }
 }
 </script>

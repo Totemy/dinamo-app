@@ -1,7 +1,7 @@
 <template>
   <section id="menu" class="menu">
     <div class="container">
-      <div class="article">
+      <div v-reveal class="article">
         <h2 class="article__header">Menu</h2>
         <p class="article__text">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam pretium netus urna
@@ -17,13 +17,12 @@
     </div>
   </section>
 </template>
+
 <script>
 import CarouselPage from '@/components/CarouselPage.vue'
 import CarouselMobilePage from '@/components/CarouselMobilePage.vue'
+
 export default {
-  components: {
-    CarouselMobilePage,
-    CarouselPage
-  }
+  components: { CarouselPage, CarouselMobilePage }
 }
 </script>
