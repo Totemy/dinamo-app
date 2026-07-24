@@ -1,38 +1,31 @@
 <template>
-  <section id="contact" class="footer">
+  <footer id="contact" class="footer">
     <div class="container">
       <div class="footer__container">
         <div class="footer__item">
-          <div class="footer__logo">
-            <img class="footer__logo" src="/img/footer/logo2.png" alt="logo" />
-          </div>
+          <img class="footer__logo" src="/img/footer/logo2.png" alt="Dinamo Georgian Bistro" />
         </div>
-        <div class="footer__item">
-          <div class="footer__phone">
-            <div class="footer__text">
-              <p>+380 (98) 765 43 21</p>
-            </div>
-          </div>
-        </div>
-        <div class="footer__item">
+        <div v-for="contact in footerContacts" :key="contact" class="footer__item">
           <div class="footer__text">
-            <p>Kyiv, Khreshchatyk metro station</p>
-          </div>
-        </div>
-        <div class="footer__item">
-          <div class="footer__text">
-            <p>Email: mail@mal.ua</p>
+            <p>{{ contact }}</p>
           </div>
         </div>
       </div>
+
       <div class="footer__footer">
         <div class="footer__left">
-          <div class="footer__footer__item">Privacy Policy</div>
-          <div class="footer__footer__item">User Agreement</div>
+          <div v-for="item in footerLegal" :key="item" class="footer__footer__item">{{ item }}</div>
         </div>
         <div class="footer__footer__item">Dynamo. Georgian Bistro. All rights reserved, 2025</div>
       </div>
     </div>
-  </section>
+  </footer>
 </template>
-<script setup></script>
+
+<script>
+import { footerContacts, footerLegal } from '@/services/content'
+
+export default {
+  data: () => ({ footerContacts, footerLegal })
+}
+</script>
