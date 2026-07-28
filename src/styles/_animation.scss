@@ -1,9 +1,85 @@
-@keyframes pulse {
-  0% {
+$ease-out: cubic-bezier(0.22, 0.61, 0.36, 1);
+$duration-fast: 0.2s;
+$duration-base: 0.4s;
+$duration-slow: 0.8s;
+
+@keyframes fade-up {
+  from {
     opacity: 0;
+    transform: translate3d(0, 30px, 0);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes drop-in {
+  from {
+    opacity: 0;
+    transform: translate3d(0, -100%, 0);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) rotate(0deg);
   }
   50% {
-    transform: scale(1.4);
-    opacity: 0.4;
+    transform: translate3d(0, -12px, 0) rotate(1.5deg);
+  }
+}
+
+@keyframes sheen {
+  to {
+    left: 130%;
+  }
+}
+
+// Driven by src/directives/reveal.js
+.reveal {
+  opacity: 0;
+  transform: translate3d(0, 30px, 0);
+  transition:
+    opacity $duration-slow $ease-out var(--reveal-delay, 0s),
+    transform $duration-slow $ease-out var(--reveal-delay, 0s);
+
+  &.is-revealed {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.float {
+  animation: float 7s ease-in-out infinite;
+
+  &--slow {
+    animation-duration: 11s;
+  }
+
+  &--delayed {
+    animation-duration: 9s;
+    animation-delay: -3.5s;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .reveal {
+    opacity: 1;
+    transform: none;
   }
 }

@@ -1,37 +1,72 @@
-.btn{
-  cursor:pointer;
-  &__primary{
-    background-color: $second-color;
-    color: #FFFFFF;
+.btn {
+  cursor: pointer;
+  font-family: inherit;
+
+  &__primary {
+    position: relative;
+    overflow: hidden;
     padding: 21px 50px;
-    border: solid 1px $second-color;
+    border: solid 1px $color-accent;
     border-radius: 5px;
+    background-color: $color-accent;
+    color: $color-text;
     font-size: 14px;
     font-weight: bold;
-    transition: all 0.2s ease-in-out;
-    &:hover{
-      background-color: darken($second-color,10%);
-      box-shadow: #fefefe 10px 10px 1px;
-      transition: box-shadow .2s;
+    transition:
+      background-color $duration-fast ease-in-out,
+      box-shadow $duration-fast ease-in-out,
+      transform $duration-fast $ease-out;
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: -60%;
+      width: 40%;
+      background: linear-gradient(100deg, transparent, rgba(255, 255, 255, 0.35), transparent);
+      transform: skewX(-20deg);
+    }
+
+    &:hover {
+      background-color: darken($color-accent, 10%);
+      box-shadow: $color-shine 10px 10px 1px;
+      transform: translateY(-2px);
+
+      &::after {
+        animation: sheen 0.75s $ease-out;
+      }
+    }
+
+    &:active {
+      transform: translateY(0);
     }
   }
-  &__open-menu{
+
+  &__open-menu {
     position: absolute;
-    padding: 20px 55px;
-    border: solid 1px #FFFFFF;
-    color: #FFFFFF;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 3;
+    padding: 0.8rem 1.4rem;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 4px;
+    background-color: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(4px);
+    color: $color-text;
+    font-size: 1rem;
     font-weight: bold;
-    font-size: 14px;
-    border-radius: 5px;
-    background-color: rgba(0, 0, 0, 0.5);
-    z-index: 1;
-    left: 29px;
-    top: 217px;
-    transition: box-shadow .2s;
-    &:hover{
-      background-color: darken($second-color,10%);
-      box-shadow: #fefefe 10px 10px 1px;
-      transition: box-shadow .2s;
+    white-space: nowrap;
+    transition:
+      background-color $duration-fast,
+      box-shadow $duration-fast,
+      transform $duration-fast $ease-out;
+
+    &:hover {
+      background-color: rgba(255, 255, 255, 0.3);
+      box-shadow: $color-shine 10px 10px 1px;
+      transform: translate(-50%, -50%) scale(1.04);
     }
   }
 }
