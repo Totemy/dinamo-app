@@ -1,3 +1,11 @@
+.carousel__web {
+  display: block;
+
+  @include mobile {
+    display: none;
+  }
+}
+
 .wiper-wrapper {
   position: relative;
 }
@@ -18,10 +26,6 @@
     width: 100%;
     max-width: 1200px;
     margin: 0 auto;
-
-    @media screen and (max-width: 768px) {
-      width: 100%;
-    }
   }
 
   &__track {
@@ -29,7 +33,6 @@
     gap: 5px;
     padding: 0;
     margin: 0;
-    // зміщуємо старт треку так щоб центр активного = центр viewport
     transform-origin: left center;
   }
 
@@ -40,10 +43,14 @@
     position: relative;
     border-radius: 20px;
     overflow: hidden;
+    filter: brightness(0.5);
     transition:
       transform 0.3s ease,
       filter 0.3s ease;
-    filter: brightness(0.5);
+
+    &:hover {
+      filter: brightness(0.7);
+    }
 
     &.active-swipe {
       transform: scale(1.05);
@@ -51,7 +58,7 @@
       z-index: 1;
     }
 
-    @media screen and (max-width: 768px) {
+    @include mobile {
       flex: 0 0 85vw;
       width: 85vw;
       height: 70vw;
@@ -63,6 +70,11 @@
     width: 100%;
     object-fit: cover;
     display: block;
+    transition: transform 0.8s $ease-out;
+  }
+
+  &__item.active-swipe &__image {
+    transform: scale(1.06);
   }
 
   &__text {
@@ -73,9 +85,14 @@
     text-align: center;
     font-weight: 600;
     font-size: 22px;
-    color: #fff;
+    color: $color-text;
     z-index: 2;
     text-shadow: 0 2px 8px rgba(0, 0, 0, 0.7);
+    transition: transform $duration-base $ease-out;
+  }
+
+  &__item.active-swipe &__text {
+    transform: translateY(-4px);
   }
 
   &-button {
@@ -87,6 +104,7 @@
     cursor: pointer;
     z-index: 2;
     padding: 0;
+    transition: transform $duration-base $ease-out;
 
     img {
       height: 100%;
@@ -97,44 +115,17 @@
     &__right {
       transform: rotate(180deg);
     }
+
+    &__left:hover {
+      transform: translateX(-6px);
+    }
+
+    &__right:hover {
+      transform: rotate(180deg) translateX(-6px);
+    }
   }
 }
 
-.overlay {
-  position: absolute;
-  inset: 0;
-  // overlay тепер через filter на item, але залишаємо для сумісності
-  pointer-events: none;
-}
-
-.btn__open-menu {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  padding: 0.8rem 1.4rem;
-  border-radius: 4px;
-  background-color: rgba(255, 255, 255, 0.15);
-  backdrop-filter: blur(4px);
-  border: 1px solid rgba(255, 255, 255, 0.5);
-  color: #fff;
-  font-size: 1rem;
-  cursor: pointer;
-  white-space: nowrap;
-  transition: background 0.2s;
-  z-index: 3;
-
-  &:hover {
-    background-color: rgba(255, 255, 255, 0.3);
-  }
-}
-
-.carousel__web {
-  display: block;
-  @media screen and (max-width: 768px) {
-    display: none;
-  }
-}
 .mobile-carousel {
   display: none;
 
@@ -144,6 +135,7 @@
     gap: 16px;
     padding: 0 16px;
   }
+
   &__item {
     position: relative;
     width: 100%;
@@ -171,19 +163,10 @@
     left: 0;
     right: 0;
     text-align: center;
-    color: #fff;
+    color: $color-text;
     font-weight: 600;
     font-size: 20px;
     z-index: 2;
     text-shadow: 0 2px 6px rgba(0, 0, 0, 0.6);
-  }
-
-  .btn__open-menu {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 3;
-    white-space: nowrap;
   }
 }

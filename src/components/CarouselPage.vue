@@ -1,25 +1,25 @@
 <template>
   <div class="wiper-wrapper">
     <div class="wiper">
-      <button class="wiper-button wiper-button__left" @click="prevSlide">
-        <img src="/img/carousel/left-arrow.svg" alt="Prev" />
+      <button class="wiper-button wiper-button__left" type="button" @click="go(-1)">
+        <img src="/img/carousel/left-arrow.svg" alt="Previous category" />
       </button>
 
       <div class="wiper__viewport">
-        <ul class="wiper__track" :style="trackStyle" @transitionend="onTransitionEnd">
+        <ul class="wiper__track" :style="trackStyle" @transitionend.self="snapToRealSlide">
           <li
-            v-for="(slide, index) in extendedSlides"
+            v-for="(slide, index) in loopedSlides"
             :key="index"
             class="wiper__item"
-            :class="{ 'active-swipe': index === currentIndex + 1 }"
+            :class="{ 'active-swipe': isActive(index) }"
           >
-            <img :src="slide.image" class="wiper__image" alt="slide image" />
+            <img :src="slide.image" class="wiper__image" alt="" role="presentation" />
             <p class="wiper__text">{{ slide.text }}</p>
-            <div v-if="index !== currentIndex + 1" class="overlay"></div>
             <button
-              v-if="index === currentIndex + 1"
+              v-if="isActive(index)"
               class="btn btn__open-menu"
-              @click="openMenu()"
+              type="button"
+              @click="$router.push('/menu')"
             >
               Open menu
             </button>
@@ -27,80 +27,63 @@
         </ul>
       </div>
 
-      <button class="wiper-button wiper-button__right" @click="nextSlide">
-        <img src="/img/carousel/left-arrow.svg" alt="Next" />
+      <button class="wiper-button wiper-button__right" type="button" @click="go(1)">
+        <img src="/img/carousel/left-arrow.svg" alt="Next category" />
       </button>
     </div>
   </div>
 </template>
 
 <script>
-import router from '@/router/index.js'
+import { menuCategories } from '@/services/content'
+
+const ITEM_WIDTH = 293
+const GAP = 5
+const VIEWPORT_OFFSET = '38%' // shifts the track so the active card sits centred
 
 export default {
-  data() {
-    return {
-      currentIndex: 0,
-      isTransitioning: false,
-      itemWidth: 293,
-      gap: 5,
-      slides: [
-        { image: '/img/carousel/1.webp', text: 'Salads' },
-        { image: '/img/carousel/2.webp', text: 'Baking' },
-        { image: '/img/carousel/3.webp', text: 'Soups' },
-        { image: '/img/carousel/4.webp', text: 'Grilled dishes' },
-        { image: '/img/carousel/5.webp', text: 'Hot dishes' },
-        { image: '/img/carousel/6.webp', text: 'Sauces' }
-      ]
-    }
-  },
+  data: () => ({
+    slides: menuCategories,
+    currentIndex: 0,
+    isSnapping: false
+  }),
   computed: {
-    // clone first and last image for circle carousel
-    extendedSlides() {
-      return [this.slides[this.slides.length - 1], ...this.slides, this.slides[0]]
-    },
-    step() {
-      return this.itemWidth + this.gap
+    // The last and first slides are cloned on both ends so the loop never shows a gap.
+    loopedSlides() {
+      return [this.slides.at(-1), ...this.slides, this.slides[0]]
     },
     trackStyle() {
-      const offset = (this.currentIndex + 1) * this.step
+      const offset = (this.currentIndex + 1) * (ITEM_WIDTH + GAP)
       return {
-        transform: `translateX(calc(-${offset}px + 38%))`,
-        transition: this.isTransitioning ? 'none' : 'transform 0.4s ease-in-out'
+        transform: `translateX(calc(-${offset}px + ${VIEWPORT_OFFSET}))`,
+        transition: this.isSnapping ? 'none' : 'transform 0.4s ease-in-out'
       }
     }
   },
   methods: {
-    nextSlide() {
-      if (this.isTransitioning) return
-      this.currentIndex++
+    isActive(index) {
+      return index === this.currentIndex + 1
     },
-    prevSlide() {
-      if (this.isTransitioning) return
-      this.currentIndex--
+    go(direction) {
+      if (this.isSnapping) return
+      this.currentIndex += direction
     },
-    onTransitionEnd() {
-      // Якщо дійшли до клону — стрибаємо без анімації
-      if (this.currentIndex >= this.slides.length) {
-        this.isTransitioning = true
-        this.currentIndex = 0
-        this.$nextTick(() => {
-          setTimeout(() => {
-            this.isTransitioning = false
-          }, 50)
-        })
-      } else if (this.currentIndex < 0) {
-        this.isTransitioning = true
-        this.currentIndex = this.slides.length - 1
-        this.$nextTick(() => {
-          setTimeout(() => {
-            this.isTransitioning = false
-          }, 50)
-        })
-      }
+    snapToRealSlide(event) {
+      if (event.propertyName !== 'transform') return
+
+      const { length } = this.slides
+      if (this.currentIndex >= 0 && this.currentIndex < length) return
+
+      this.isSnapping = true
+      this.currentIndex = this.currentIndex < 0 ? length - 1 : 0
+      this.restoreTransition()
     },
-    openMenu() {
-      router.push('/menu')
+    // The rewind must be painted before transitions come back, or it animates
+    // backwards. The timeout covers background tabs, where rAF is paused.
+    restoreTransition() {
+      const restore = () => (this.isSnapping = false)
+      requestAnimationFrame(restore)
+      setTimeout(restore, 150)
     }
   }
 }
