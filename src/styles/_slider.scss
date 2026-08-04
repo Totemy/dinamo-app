@@ -3,46 +3,64 @@
   max-width: 100%;
   height: 360px;
 
-}
-.slides {
-  display: flex;
-  transition: transform 0.5s ease;
+  &__slides {
+    display: flex;
+  }
 
-}
-.slides img {
-  width: 95%;
-  height: auto;
-  display: block;
-  position: absolute;
-  padding: 0px 10px;
-  top: 0;
-  left: 0;
-  opacity: 0;
-  z-index: -1;
+  &__slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 95%;
+    height: auto;
+    display: block;
+    padding: 0px 10px;
+    opacity: 0;
+    z-index: 0;
+    transition: opacity 0.8s $ease-out;
 
+    &.is-active {
+      opacity: 1;
+      z-index: 1;
+      animation: ken-burns 4s $ease-out both;
+    }
+  }
+
+  &__points {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    z-index: 2;
+  }
+
+  &__point {
+    width: 10px;
+    height: 10px;
+    margin: 0 5px;
+    padding: 0;
+    border: none;
+    border-radius: 50%;
+    background-color: #ccc;
+    cursor: pointer;
+    transition:
+      width $duration-base $ease-out,
+      background-color $duration-base ease;
+
+    &.is-active {
+      width: 24px;
+      border-radius: 5px;
+      background-color: $color-accent;
+    }
+  }
 }
-.slides img.active {
-  opacity: 1;
-  z-index: 1;
-}
-.slides img.next {
-  z-index: 2;
-}
-.slider-points {
-  position: absolute;
-  bottom: 10px;
-  left: 50%;
-  transform: translateX(-50%);
-  display: flex;
-}
-.slider-points span {
-  width: 10px;
-  height: 10px;
-  background-color: #ccc;
-  border-radius: 50%;
-  margin: 0 5px;
-  cursor: pointer;
-}
-.slider-points span.active {
-  background-color: #333;
+
+@keyframes ken-burns {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.05);
+  }
 }

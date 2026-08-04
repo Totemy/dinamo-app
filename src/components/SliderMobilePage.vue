@@ -1,60 +1,55 @@
 <template>
   <div class="slider">
-    <div class="slides">
+    <div class="slider__slides">
       <img
         v-for="(image, index) in images"
-        :key="index"
-        :src="`/img/gallery/${image.url}.webp`"
-        :class="{ active: index === currentIndex }"
-        :alt="`carousel slide ${index}`"
+        :key="image.src"
+        class="slider__slide"
+        :class="{ 'is-active': index === currentIndex }"
+        :src="image.src"
+        :alt="image.alt"
       />
     </div>
-    <div class="slider-points">
-      <span
+    <div class="slider__points">
+      <button
         v-for="(image, index) in images"
-        :key="index"
-        @click="changeSlide(index)"
-        :class="{ active: index === currentIndex }"
-      ></span>
+        :key="image.src"
+        class="slider__point"
+        :class="{ 'is-active': index === currentIndex }"
+        type="button"
+        :aria-label="`Go to slide ${index + 1}`"
+        @click="goTo(index)"
+      ></button>
     </div>
   </div>
 </template>
 
 <script>
+import { galleryImages } from '@/services/content'
+
+const SLIDE_DURATION = 3000
+
 export default {
-  data() {
-    return {
-      images: [
-        { url: 'gal1' },
-        { url: 'gal2' },
-        { url: 'gal3' },
-        { url: 'gal4' },
-        { url: 'gal5' },
-        { url: 'gal6' },
-        { url: 'gal7' },
-        { url: 'gal8' }
-      ],
-      currentIndex: 0,
-      intervalId: null
-    }
-  },
+  data: () => ({ images: galleryImages, currentIndex: 0, timerId: null }),
   mounted() {
-    this.startSlideShow()
+    this.start()
+  },
+  beforeUnmount() {
+    this.stop()
   },
   methods: {
-    startSlideShow() {
-      this.intervalId = setInterval(this.nextSlide, 3000)
+    start() {
+      this.timerId = setInterval(() => {
+        this.currentIndex = (this.currentIndex + 1) % this.images.length
+      }, SLIDE_DURATION)
     },
-    stopSlideShow() {
-      clearInterval(this.intervalId)
+    stop() {
+      clearInterval(this.timerId)
     },
-    nextSlide() {
-      this.currentIndex = (this.currentIndex + 1) % this.images.length
-    },
-    changeSlide(index) {
+    goTo(index) {
       this.currentIndex = index
-      this.stopSlideShow()
-      this.startSlideShow()
+      this.stop()
+      this.start()
     }
   }
 }
