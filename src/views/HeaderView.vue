@@ -1,95 +1,71 @@
 <template>
-  <div class="header">
+  <header class="header">
     <div class="container">
       <!-- Desktop -->
-      <div class="navbar-web">
+      <nav class="navbar-web">
         <div class="navbar-web__row">
-          <div class="navbar-web__item">
+          <a class="navbar-web__logo" href="#main">
             <img src="/img/footer/logo2.png" alt="Dinamo Georgian Bistro" />
+          </a>
+
+          <div v-for="link in navLinks" :key="link.href" class="navbar-web__item">
+            <a :href="link.href">{{ link.label }}</a>
           </div>
-          <div class="navbar-web__item"><a href="#main">home</a></div>
-          <div class="navbar-web__item"><a href="#menu">menu</a></div>
-          <div class="navbar-web__item"><a href="#delivery">delivery</a></div>
-          <div class="navbar-web__item"><a href="#contact">contacts</a></div>
-          <div class="navbar-web__item"><a href="#discount">stock</a></div>
-          <div class="navbar-web__phone">+380 (98) 765 43 21</div>
+
+          <div class="navbar-web__phone">{{ PHONE }}</div>
+
           <div class="navbar-web__social">
-            <div>
-              <img
-                class="navbar-web__social_img"
-                src="/img/header/instagram.svg"
-                alt="social-logo"
-              />
-            </div>
-            <div>
-              <img
-                class="navbar-web__social_img"
-                src="/img/header/facebook.svg"
-                alt="social-logo"
-              />
-            </div>
-            <div>
-              <img class="navbar-web__social_img" src="/img/header/twitter.svg" alt="social-logo" />
+            <div v-for="social in socialLinks" :key="social.label">
+              <img class="navbar-web__social_img" :src="social.icon" :alt="social.label" />
             </div>
           </div>
         </div>
-      </div>
+      </nav>
 
       <!-- Mobile -->
-      <div class="navbar-mobile">
-        <img class="navbar-mobile__logo" src="/img/footer/logo2.png" alt="logo icon" />
+      <nav class="navbar-mobile">
+        <img class="navbar-mobile__logo" src="/img/footer/logo2.png" alt="Dinamo Georgian Bistro" />
 
         <div class="navbar-mobile__social">
           <div class="navbar-mobile__social_img">
-            <img src="/img/header/phone.svg" alt="phone icon" />
+            <img src="/img/header/phone.svg" alt="Phone" />
           </div>
-          <div class="navbar-mobile__social_img">
-            <img src="/img/header/instagram.svg" alt="Instagram" />
-          </div>
-          <div class="navbar-mobile__social_img">
-            <img src="/img/header/facebook.svg" alt="Facebook" />
-          </div>
-          <div class="navbar-mobile__social_img">
-            <img src="/img/header/twitter.svg" alt="Twitter" />
+          <div v-for="social in socialLinks" :key="social.label" class="navbar-mobile__social_img">
+            <img :src="social.icon" :alt="social.label" />
           </div>
         </div>
 
-        <div
+        <button
           class="navbar-burger"
-          :class="{ 'navbar-burger--open': openBar }"
-          @click="openBar = !openBar"
+          :class="{ 'navbar-burger--open': isMenuOpen }"
+          type="button"
+          :aria-expanded="isMenuOpen"
+          aria-label="Toggle navigation menu"
+          @click="isMenuOpen = !isMenuOpen"
         >
           <span class="navbar-burger__bar"></span>
           <span class="navbar-burger__bar"></span>
           <span class="navbar-burger__bar"></span>
-        </div>
-      </div>
+        </button>
+      </nav>
     </div>
 
     <transition name="menu-slide">
-      <div class="navbar-mobile__list" v-if="openBar">
-        <div class="navbar-mobile__item"><a href="#main" @click="openBar = false">home</a></div>
-        <div class="navbar-mobile__item"><a href="#menu" @click="openBar = false">menu</a></div>
-        <div class="navbar-mobile__item">
-          <a href="#delivery" @click="openBar = false">delivery</a>
-        </div>
-        <div class="navbar-mobile__item">
-          <a href="#contact" @click="openBar = false">contacts</a>
-        </div>
-        <div class="navbar-mobile__item">
-          <a href="#discount" @click="openBar = false">stock</a>
+      <div v-if="isMenuOpen" class="navbar-mobile__list">
+        <div v-for="link in navLinks" :key="link.href" class="navbar-mobile__item">
+          <a :href="link.href" @click="isMenuOpen = false">{{ link.label }}</a>
         </div>
       </div>
     </transition>
-  </div>
+  </header>
 </template>
 
 <script>
+import { navLinks, socialLinks, PHONE } from '@/services/content'
+
 export default {
   data() {
-    return {
-      openBar: false
-    }
+    return { isMenuOpen: false, navLinks, socialLinks, PHONE }
   }
 }
 </script>

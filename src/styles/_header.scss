@@ -6,6 +6,7 @@
   z-index: 1000;
   background-color: rgba(0, 0, 0, 0.85);
   backdrop-filter: blur(8px);
+  animation: drop-in 0.6s $ease-out both;
 }
 
 // ─── Desktop ───────────────────────────────────────────
@@ -21,18 +22,43 @@
     padding: 2px 0;
   }
 
-  &__item {
-    font-size: 16px;
-    font-weight: 500;
+  &__logo {
+    display: flex;
 
     img {
       height: 56px;
       width: 111px;
       object-fit: contain;
+      transition: transform $duration-base $ease-out;
     }
 
-    &:hover {
-      border-bottom: 4px solid #b82121;
+    &:hover img {
+      transform: scale(1.06);
+    }
+  }
+
+  &__item {
+    position: relative;
+    font-size: 16px;
+    font-weight: 500;
+
+    // Sits outside the box so hovering never shifts the row.
+    &::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: -4px;
+      height: 4px;
+      background-color: $color-accent;
+      transform: scaleX(0);
+      transform-origin: right center;
+      transition: transform $duration-base $ease-out;
+    }
+
+    &:hover::after {
+      transform: scaleX(1);
+      transform-origin: left center;
     }
   }
 
@@ -47,7 +73,7 @@
       left: -25px;
       width: 20px;
       height: 20px;
-      background-image: url('/public/img/header/phone.svg');
+      background-image: url('/img/header/phone.svg');
       background-size: contain;
       background-repeat: no-repeat;
     }
@@ -58,6 +84,11 @@
 
     &_img {
       padding: 5px;
+      transition: transform $duration-base $ease-out;
+
+      &:hover {
+        transform: translateY(-3px) scale(1.15);
+      }
     }
   }
 }
@@ -115,16 +146,23 @@
     }
 
     a {
-      color: white;
+      display: block;
+      color: $color-text;
       font-size: 18px;
       font-weight: 500;
       letter-spacing: 1px;
       text-decoration: none;
       text-transform: uppercase;
-      transition: color 0.2s;
+      transition:
+        color $duration-fast,
+        transform $duration-fast $ease-out;
 
       &:hover {
-        color: #b82121;
+        color: $color-accent;
+      }
+
+      &:active {
+        transform: translateX(6px);
       }
     }
   }
@@ -137,6 +175,8 @@
   justify-content: center;
   gap: 5px;
   padding: 10px;
+  border: none;
+  background: transparent;
   cursor: pointer;
   z-index: 1001;
 
@@ -148,10 +188,10 @@
     width: 28px;
     height: 2px;
     border-radius: 5px;
-    background-color: white;
+    background-color: $color-text;
     transform-origin: center;
     transition:
-      transform 0.35s ease,
+      transform 0.35s $ease-out,
       opacity 0.35s ease,
       width 0.35s ease;
   }
@@ -170,18 +210,23 @@
   }
 }
 
-// ─── Menu transition ───────────────────────────────────
+// ─── Mobile menu transition ────────────────────────────
 .menu-slide-enter-active,
 .menu-slide-leave-active {
   overflow: hidden;
-  max-height: 400px;
   transition:
-    max-height 0.35s ease,
-    opacity 0.35s ease;
+    max-height 0.35s $ease-out,
+    opacity 0.3s ease;
 }
 
-.menu-slide-enter,
+.menu-slide-enter-from,
 .menu-slide-leave-to {
   max-height: 0;
   opacity: 0;
+}
+
+.menu-slide-enter-to,
+.menu-slide-leave-from {
+  max-height: 400px;
+  opacity: 1;
 }
