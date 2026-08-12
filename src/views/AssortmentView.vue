@@ -1,64 +1,66 @@
 <template>
   <section id="discount" class="assortment">
     <div class="container assortment__container">
-      <div class="article">
+      <div v-reveal class="article">
         <h2 class="article__header">Try it for taste</h2>
         <p class="article__text">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam pretium netus urna
           hendrerit convallis aliquam consequat turpis.
         </p>
       </div>
+
       <div class="assortment__card">
-        <div class="assortment__card__item">
+        <div
+          v-for="(card, index) in assortmentCards"
+          :key="card.image"
+          v-reveal="index * 120"
+          class="assortment__card__item"
+        >
           <div class="assortment__card__wrapper">
-            <img class="assortment__img" src="/img/assortiment/elips/1.webp" alt="1.webp" />
+            <img class="assortment__img" :src="card.image" :alt="card.alt" />
           </div>
           <div class="assortment__card__text">
-            <p>There will be some text here, perhaps the name of a dish.</p>
-          </div>
-        </div>
-        <div class="assortment__card__item">
-          <div class="assortment__card__wrapper">
-            <img class="assortment__img" src="/img/assortiment/elips/2.webp" alt="1.webp" />
-          </div>
-          <div class="assortment__card__text">
-            <p>There will be some text here, perhaps the name of a dish.</p>
-          </div>
-        </div>
-        <div class="assortment__card__item">
-          <div class="assortment__card__wrapper">
-            <img class="assortment__img" src="/img/assortiment/elips/3.webp" alt="1.webp" />
-          </div>
-          <div class="assortment__card__text">
-            <p>There will be some text here, perhaps the name of a dish.</p>
+            <p>{{ card.text }}</p>
           </div>
         </div>
       </div>
-      <div class="assortment__button">
-        <button class="btn btn__primary">GO TO DELIVERY</button>
+
+      <div v-reveal class="assortment__button">
+        <button class="btn btn__primary" type="button">GO TO DELIVERY</button>
       </div>
+
       <img
-        class="assortment__tomato-img"
+        class="assortment__tomato-img float float--slow"
         width="287"
-        height="287"
-        src="../../public/img/assortiment/tomato.png"
-        alt="tomato"
+        height="289"
+        src="/img/assortiment/tomato.png"
+        alt=""
+        role="presentation"
       />
       <img
-        class="assortment__basil1-img"
+        class="assortment__basil1-img float"
         width="287"
-        height="287"
-        src="../../public/img/assortiment/basil.png"
-        alt="basil1"
+        height="390"
+        src="/img/assortiment/basil.png"
+        alt=""
+        role="presentation"
       />
       <img
-        class="assortment__basil2-img"
+        class="assortment__basil2-img float float--delayed"
         width="287"
-        height="287"
-        src="../../public/img/assortiment/basil2.png"
-        alt="basil2"
+        height="307"
+        src="/img/assortiment/basil2.png"
+        alt=""
+        role="presentation"
       />
     </div>
   </section>
 </template>
-<script setup></script>
+
+<script>
+import { assortmentCards } from '@/services/content'
+
+export default {
+  data: () => ({ assortmentCards })
+}
+</script>

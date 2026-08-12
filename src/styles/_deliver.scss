@@ -1,66 +1,88 @@
 .deliver {
+  &__container {
+    position: relative;
+    padding-top: 160px;
+  }
+
   &__content {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+
     @include mobile {
       flex-direction: column;
       padding-bottom: 60px;
     }
   }
-  &__item {
-    display: flex;
-    align-items: center;
-    gap: 30px;
-  }
+
   &__cards {
     &__item {
       display: flex;
       align-items: center;
       margin-bottom: 50px;
+
       @include mobile {
         flex-direction: column;
         text-align: center;
         margin: 30px 10px;
       }
     }
+
     &__text {
       max-width: 400px;
       font-weight: 700;
       font-size: 18px;
     }
   }
-  &__main-img {
-    width: 605px;
-    @include mobile {
-      position: relative;
-      width: 100%;
-      z-index: 2;
-    }
-  }
+
   &__img {
     width: 120px;
     height: 120px;
     scale: 102%;
+    transition: transform 0.6s $ease-out;
+
     &__wrapper {
       width: 120px;
       height: 120px;
       border-radius: 100%;
       overflow: hidden;
       margin-right: 30px;
+      transition: transform $duration-base $ease-out;
+
       @include mobile {
         margin-bottom: 30px;
         margin-right: 0px;
       }
     }
   }
+
+  &__cards__item:hover &__img__wrapper {
+    transform: translateY(-8px);
+  }
+
+  &__cards__item:hover &__img {
+    transform: scale(1.12);
+  }
+
+  &__main-img {
+    width: 605px;
+
+    @include mobile {
+      position: relative;
+      width: 100%;
+      z-index: 2;
+    }
+  }
+
   &__tomato {
     position: absolute;
     bottom: 32px;
     left: -69px;
   }
+
   &__tomato-mobile {
     display: none;
+
     @include mobile {
       position: absolute;
       bottom: 148px;
@@ -68,23 +90,22 @@
       left: 0px;
     }
   }
+
   &__basil-left {
     position: absolute;
     top: -49px;
     left: -245px;
     scale: 71%;
   }
+
   &__basil-right {
     position: absolute;
     right: -380px;
     bottom: -224px;
     z-index: 1;
+
     @include mobile {
       display: none;
     }
-  }
-  &__container {
-    position: relative;
-    padding-top: 160px;
   }
 }

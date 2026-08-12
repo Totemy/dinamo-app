@@ -3,7 +3,14 @@
   margin: 0 auto;
   position: relative;
   z-index: 2;
-  // mobile version
+
+  &__wrapper {
+    text-align: center;
+
+    @include mobile {
+      display: none;
+    }
+  }
 
   &__list {
     display: flex;
@@ -13,20 +20,28 @@
     justify-content: center;
     align-items: center;
   }
+
   &__item {
+    overflow: hidden;
+    line-height: 0;
   }
+
   &__img {
     width: 358px;
     height: 269px;
+    transition:
+      transform 0.7s $ease-out,
+      filter $duration-base ease;
   }
-  &__wrapper {
-    text-align: center;
-    @include mobile {
-      display: none;
-    }
+
+  &__item:hover &__img {
+    transform: scale(1.1);
+    filter: brightness(1.15) saturate(1.1);
   }
+
   &__mobile {
     display: none;
+
     @include mobile {
       display: block;
     }
