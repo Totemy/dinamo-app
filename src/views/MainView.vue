@@ -2,23 +2,22 @@
   <section id="main" class="main">
     <div class="container">
       <div class="main__content">
-        <div class="main__article">
-          <h1>Try the best <span style="color: #b82121">Georgian</span> kitchen.</h1>
+        <div class="main__article main__enter">
+          <h1>Try the best <span class="text-accent">Georgian</span> kitchen.</h1>
         </div>
-        <div class="main__text">
+        <div class="main__text main__enter main__enter--2">
           <p>
             In our restaurant, you'll find the finest dishes prepared using traditional Georgian
             recipes. The incredible flavors will transport you to the atmosphere of incredible
             Tbilisi without leaving your home.
           </p>
         </div>
-        <div class="main__button">
+        <div class="main__button main__enter main__enter--3">
           <a href="#menu">
-            <button class="btn btn__primary" type="button" href="#menu">GO TO MENU</button></a
-          >
+            <button class="btn btn__primary" type="button">GO TO MENU</button>
+          </a>
         </div>
       </div>
-      <div></div>
     </div>
   </section>
 </template>
