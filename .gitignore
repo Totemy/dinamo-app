@@ -28,3 +28,10 @@ coverage
 *.sw?
 
 *.tsbuildinfo
+
+# Agent skills and assistant config
+.agents/
+.claude/
+skills-lock.json
+CLAUDE.md
+AGENTS.md

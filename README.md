@@ -40,11 +40,14 @@ A pixel-perfect responsive website for a Georgian restaurant, built from a Figma
 
 - **Pixel-perfect** implementation from a Figma design
 - **Custom infinite carousel** — built from scratch without libraries, with smooth infinite loop animation
+- **Scroll-reveal animations** — a tiny `v-reveal` directive backed by a single shared `IntersectionObserver`
+- **Motion everywhere it helps** — staggered hero entrance, floating decorations, hover zoom on the gallery,
+  animated nav underline, sheen on primary buttons — all honouring `prefers-reduced-motion`
 - **Fully responsive** — mobile-first approach, adaptive layout for all screen sizes
 - **Animated burger menu** — transforms into × on open, with smooth slide-down transition
 - **Fixed header** with blur backdrop effect
-- **BEM** naming convention throughout all SCSS
-- **Clean component architecture** — separate components for header, carousel, mobile carousel, modal, etc.
+- **BEM** naming convention throughout all SCSS, with shared colour and motion tokens
+- **Content-driven views** — all copy and image lists live in `src/services/content.js`, views stay markup-only
 
 ---
 
